@@ -1,0 +1,875 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TeXSetup.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TeXSetup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_TEXSETUP,IDC_STATIC,11,17,20,20
+    LTEXT           "TeXSetup Version 8.1",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 1999-2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PROPPAGE_WELCOME DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_LICENSE,95,40,205,91,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL | NOT 
+                    WS_TABSTOP
+    CONTROL         "Quick Install",IDC_CHECK_QUICKINSTALL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,144,205,10
+    CONTROL         140,IDC_STATIC,"Static",SS_BITMAP,7,40,73,91
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "Welcome to the TeXLive Setup Wizard !",
+                    IDC_STATIC_HEADER,7,7,306,14
+    CONTROL         "&Install for all users",IDC_CHECK_ADMINISTRATOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,158,205,10
+    CONTROL         "Install XEmTeX support",IDC_CHECK_XEMTEX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,172,205,10
+END
+
+IDD_PROPPAGE_ROOT DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_ROOTDIR,100,43,195,12,ES_AUTOHSCROLL,0,HIDC_ROOTDIR
+    PUSHBUTTON      "B&rowse",IDC_BROWSE,25,168,43,14
+    LTEXT           "Root of Installation",IDC_STATIC_HEADER,6,7,131,10
+    LTEXT           "Root directory",IDC_STATIC,25,43,67,11
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,30,
+                    307,1
+    LTEXT           "Space available:",IDC_STATIC,155,172,83,10
+    RTEXT           "",IDC_STATIC_SPACE_AVAILABLE,240,172,43,10
+    LTEXT           "Kb",IDC_STATIC,285,172,10,10
+    LTEXT           "Space required (default) :",IDC_STATIC,155,160,83,10
+    RTEXT           "",IDC_STATIC_DEFAULT_SIZE,240,160,43,10
+    LTEXT           "Kb",IDC_STATIC,285,160,10,10
+    EDITTEXT        IDC_LOCAL_TEXMF,100,82,195,12,ES_AUTOHSCROLL,0,
+                    HIDC_LOCAL_TEXMF
+    EDITTEXT        IDC_EXTRA_TEXMF,100,96,195,12,ES_AUTOHSCROLL,0,
+                    HIDC_EXTRA_TEXMF
+    EDITTEXT        IDC_HOME_TEXMF,100,110,195,12,ES_AUTOHSCROLL,0,
+                    HIDC_HOME_TEXMF
+    EDITTEXT        IDC_VAR_TEXMF,100,124,195,12,ES_AUTOHSCROLL,0,
+                    HIDC_VAR_TEXMF
+    EDITTEXT        IDC_VAR_FONTS,100,138,195,12,ES_AUTOHSCROLL,0,
+                    HIDC_VAR_FONTS
+    LTEXT           "&Local TeXMF tree",IDC_STATIC,25,83,67,10
+    LTEXT           "&Extra TeXMF tree",IDC_STATIC,25,97,67,10
+    LTEXT           "&Home TeXMF Tree",IDC_STATIC,25,111,67,10
+    LTEXT           "&Var TeXMF Directory",IDC_STATIC,25,125,67,10
+    LTEXT           "Var &Fonts Directory",IDC_STATIC,25,139,67,10
+    CONTROL         "You can change the default configuration for the main directories.",
+                    IDC_CHECK_CUSTOM_DIRS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,66,270,10
+END
+
+IDD_PROPPAGE_PACKAGES DIALOG  0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_PACKAGES,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,25,56,150,124
+    RTEXT           "",IDC_STATIC_TOTAL_SIZE,243,66,40,10
+    EDITTEXT        IDC_EDIT_DESCRIPTION,184,100,116,80,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_GROUP | NOT WS_TABSTOP
+    LTEXT           "Package size:",IDC_STATIC,184,57,57,10
+    RTEXT           "",IDC_STATIC_PACKAGE_SIZE,243,57,40,10
+    LTEXT           "Kb",IDC_STATIC,290,57,10,10
+    LTEXT           "Total size:",IDC_STATIC,184,66,57,10
+    LTEXT           "Select the packages or collections you want to install by checking the boxes:",
+                    IDC_STATIC,25,34,150,18
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "Description",IDC_STATIC,184,90,129,9
+    LTEXT           "Packages Selection",IDC_STATIC_HEADER,7,7,177,12
+    LTEXT           "Space available:",IDC_STATIC,184,75,57,10
+    RTEXT           "",IDC_STATIC_SPACE_AVAILABLE,243,75,40,10
+    LTEXT           "Kb",IDC_STATIC,290,75,10,10
+    LTEXT           "Kb",IDC_STATIC,290,66,10,10
+    CONTROL         "&Documentation Files",IDC_CHECK_DOC,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_GROUP | WS_TABSTOP,
+                    184,34,116,10
+    CONTROL         "&Source Files",IDC_CHECK_SOURCE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,184,43,116,10
+END
+
+IDD_PROPPAGE_REVIEW DIALOG  0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_SUMMARY,25,72,270,110,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL | NOT WS_TABSTOP
+    LTEXT           "You have choosen to install TeX with the following configuration.\nPlease review your choices :",
+                    IDC_STATIC,25,44,270,16
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,35,
+                    306,1
+    LTEXT           "Review your settings",IDC_STATIC_HEADER,7,7,305,19
+END
+
+IDD_PROPPAGE_FILE_COPY DIALOG  0, 0, 320, 190
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS_PACKAGE,
+                    "msctls_progress32",0x1,25,110,273,10
+    LTEXT           "",IDC_STATIC_PERCENT_PACKAGE,240,95,40,10
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS_TOTAL,
+                    "msctls_progress32",0x1,25,145,273,10
+    LTEXT           "",IDC_STATIC_PERCENT_TOTAL,240,130,40,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "File Copy Progress",IDC_STATIC_HEADER,7,7,306,17
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "TeXSetup will now install the selected packages :",
+                    IDC_PROMPT,25,38,270,24
+    LTEXT           "Global :",IDC_STATIC_TOTAL,25,130,71,8
+    LTEXT           "",IDC_STATIC_PACKAGE,96,95,139,8
+    LTEXT           "Now installing :",IDC_STATIC_INSTALLING,25,72,61,8
+    LTEXT           "Package:",IDC_STATIC_INSTALLING_PACKAGE,25,95,61,8
+    LTEXT           "Kb",IDC_STATIC_PERCENT_UNIT,282,95,16,10
+    LTEXT           "Kb",IDC_STATIC_PERCENT_UNIT2,282,130,16,10
+END
+
+IDD_PROPPAGE_ERROR DIALOG  0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "The following error occured during the file copy operation:",
+                    IDC_STATIC,25,45,271,8
+    EDITTEXT        IDC_EDIT_ERROR,25,60,271,38,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL | NOT WS_TABSTOP
+    LTEXT           "Information has been written to the following log file:",
+                    IDC_PROMPT,25,110,271,8
+    LTEXT           "",IDC_LOGFILE,25,117,271,8,SS_NOPREFIX
+    CONTROL         "&View log file.",IDC_CHECK_VIEW_LOGFILE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,142,271,10
+    LTEXT           "Click Exit, to exit the wizard.",IDC_STATIC,25,166,271,
+                    8
+    LTEXT           "",IDC_STATIC_LOGNAME,25,126,271,8
+    LTEXT           "Error",IDC_STATIC_HEADER,7,7,306,13
+END
+
+IDD_PROPPAGE_REBOOT DIALOG  0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "View the documentation",IDC_CHECK_DOC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,100,63,195,10
+    CONTROL         "View the log file",IDC_CHECK_LOG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,100,81,195,10
+    CONTROL         "&Restart the computer",IDC_CHECK_REBOOT,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,100,129,195,
+                    10
+    LTEXT           "Click Finish to complete the setup.",IDC_STATIC_MESSAGE,
+                    100,152,195,19
+    LTEXT           "",IDC_STATIC_REBOOT,100,104,195,20,WS_DISABLED
+    LTEXT           "You have successfully completed the setup Wizard.",
+                    IDC_STATIC,100,40,195,12
+    LTEXT           "Congratulations, the Setup is over !",IDC_STATIC_HEADER,
+                    7,7,306,16
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    CONTROL         140,IDC_STATIC,"Static",SS_BITMAP,7,42,73,91
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+END
+
+IDD_PROPPAGE_CONFIG DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Configure part :",IDC_STATIC_SUPP,80,65,100,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "",IDC_STATIC_PACKAGE,200,65,80,10
+    LTEXT           "Rebuild ls-R databases",IDC_STATIC_LSR,80,85,100,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "Rebuild format files",IDC_STATIC_FORMAT,80,103,100,10,
+                    NOT WS_VISIBLE
+    LTEXT           "Update environment variables",IDC_STATIC_ENVIRONMENT,80,
+                    121,100,10,NOT WS_VISIBLE
+    LTEXT           "Create shell objects",IDC_STATIC_SHELL,80,139,100,10,
+                    NOT WS_VISIBLE
+    CONTROL         141,IDC_OK_SUPP,"Static",SS_BITMAP | NOT WS_VISIBLE,60,
+                    64,14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_LSR,"Static",SS_BITMAP | NOT WS_VISIBLE,60,82,
+                    14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_FORMAT,"Static",SS_BITMAP | NOT WS_VISIBLE,60,
+                    100,14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_ENVIRONMENT,"Static",SS_BITMAP | NOT 
+                    WS_VISIBLE,60,118,14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_SHELL,"Static",SS_BITMAP | NOT WS_VISIBLE,60,
+                    136,14,13,WS_EX_TRANSPARENT
+    LTEXT           "Configuration",IDC_STATIC_HEADER,7,6,306,12
+    LTEXT           "TeXSetup is now configuring your installation :",
+                    IDC_PROMPT,25,38,255,26
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+END
+
+IDD_PROPPAGE_UNINSTALL DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Uninstall",IDC_STATIC_HEADER,7,6,306,12
+    LTEXT           "Remove menu entries",IDC_STATIC_MENU,80,87,79,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "",IDC_STATIC_PACKAGE,200,87,80,10
+    LTEXT           "Remove registry key",IDC_STATIC_REGISTRY,80,105,79,10,
+                    NOT WS_VISIBLE
+    LTEXT           "Remove files",IDC_STATIC_FILES,80,69,57,10,NOT 
+                    WS_VISIBLE
+    CONTROL         141,IDC_OK_MENU,"Static",SS_BITMAP | NOT WS_VISIBLE,60,
+                    84,14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_REGISTRY,"Static",SS_BITMAP | NOT WS_VISIBLE,
+                    60,102,14,13,WS_EX_TRANSPARENT
+    CONTROL         141,IDC_OK_FILES,"Static",SS_BITMAP | NOT WS_VISIBLE,60,
+                    66,14,13,WS_EX_TRANSPARENT
+    LTEXT           "TeXSetup is now removing your installation :",
+                    IDC_PROMPT,25,38,255,10
+    CONTROL         "View the log file",IDC_CHECK_LOG,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,25,146,134,10
+    LTEXT           "",IDC_STATIC_RMDIR,140,69,155,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "Restore environment",IDC_STATIC_ENVIRONMENT,80,123,79,
+                    10,NOT WS_VISIBLE
+    CONTROL         141,IDC_OK_ENVIRONMENT,"Static",SS_BITMAP | NOT 
+                    WS_VISIBLE,60,120,14,13,WS_EX_TRANSPARENT
+END
+
+IDD_PROPPAGE_SOURCE DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Source for TeXLive free files and for remote non-free files",
+                    IDC_STATIC_HEADER,6,6,302,15
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,29,
+                    302,1
+    LTEXT           "Source Directory",IDC_STATIC,24,36,113,10
+    CONTROL         "CDROM / Flat directory",IDC_RADIO_SOURCE_CDROM,"Button",
+                    BS_AUTORADIOBUTTON,34,51,90,10
+    CONTROL         "Local Directory / ZIP files",IDC_RADIO_SOURCE_ZIP,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,34,63,116,19
+    CONTROL         "Internet Only",IDC_RADIO_SOURCE_INTERNET,"Button",
+                    BS_AUTORADIOBUTTON,34,84,56,10
+    LTEXT           "CDROM / Local depot for files",IDC_STATIC,24,120,107,13,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Browse",IDC_BROWSE_LOCAL,266,135,42,13
+    EDITTEXT        IDC_EDIT_SOURCE_DIR,24,135,226,13,ES_AUTOHSCROLL
+    LTEXT           "URL for Internet files",IDC_STATIC,24,154,87,11,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Browse",IDC_BROWSE_REMOTE,266,168,42,12
+    EDITTEXT        IDC_EDIT_REMOTE_DIR,25,168,225,12,ES_AUTOHSCROLL
+    CONTROL         "Enable Internet Download",IDC_CHECK_NETDOWNLOAD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,36,98,10
+    CONTROL         "Use IE5 settings",IDC_INTERNET_CONNECTION_IE5,"Button",
+                    BS_AUTORADIOBUTTON,185,51,65,10
+    CONTROL         "Direct connection",IDC_INTERNET_CONNECTION_DIRECT,
+                    "Button",BS_AUTORADIOBUTTON,185,64,72,10
+    CONTROL         "Use HTTP/FTP proxy",IDC_INTERNET_CONNECTION_PROXY,
+                    "Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | 
+                    WS_DISABLED,185,77,85,10
+    EDITTEXT        IDC_EDIT_PROXY_ADDRESS,200,93,108,13,ES_AUTOHSCROLL | 
+                    NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "Port",IDC_STATIC,185,109,14,13,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_EDIT_PROXY_PORT,200,109,32,13,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,160,31,
+                    1,84
+    LTEXT           "Url",IDC_STATIC,185,93,14,13,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,116,
+                    302,1
+END
+
+IDD_PROPPAGE_GETTPM DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS_DOWNLOAD,
+                    "msctls_progress32",0x1,25,110,240,10
+    LTEXT           "",IDC_STATIC_PERCENT_DOWNLOAD,270,110,25,10
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS_READ,
+                    "msctls_progress32",0x1,25,144,240,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "TPM Files Progress",IDC_STATIC_HEADER,7,7,306,17
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "TeXSetup will now read the TPM files",IDC_PROMPT,25,36,
+                    270,30
+    LTEXT           "Now reading :",IDC_STATIC_READING,25,130,65,10
+    LTEXT           "Now downloading :",IDC_STATIC_DOWNLOADING,25,95,65,10
+    LTEXT           " Kb",IDC_STATIC_PERCENT_UNIT,295,110,18,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TPMZIP,100,95,165,10
+    LTEXT           "Static",IDC_STATIC_TPMREAD,100,130,165,10
+END
+
+IDD_PROPPAGE_SCHEME DIALOGEX 0, 0, 320, 190
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TeXLive Setup Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,30,
+                    306,1
+    LTEXT           "Scheme selection",IDC_STATIC_HEADER,7,7,306,17
+    LTEXT           "Static",IDC_STATIC_SCHEME,170,59,106,73,SS_SUNKEN
+    LISTBOX         IDC_LIST_SCHEME,48,59,102,73,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Choose a scheme to install",IDC_STATIC,24,36,252,11
+    CONTROL         "I want to customize the selected scheme",
+                    IDC_CHECK_CUSTOMIZE_SCHEME,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,48,144,102,16
+    RTEXT           "",IDC_STATIC_TOTAL_SIZE,221,144,40,10
+    LTEXT           "Total size:",IDC_STATIC,170,144,54,10
+    LTEXT           "Space available:",IDC_STATIC,170,158,54,10
+    RTEXT           "",IDC_STATIC_SPACE_AVAILABLE,221,158,40,10
+    LTEXT           "Kb",IDC_STATIC,268,158,10,10
+    LTEXT           "Kb",IDC_STATIC,268,144,10,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,1,0,0
+ PRODUCTVERSION 8,1,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "TeX Users Group"
+            VALUE "FileDescription", "TeXSetup MFC Application"
+            VALUE "FileVersion", "8, 1, 0, 0"
+            VALUE "InternalName", "TeXSetup"
+            VALUE "LegalCopyright", "Copyright (C) 1999-2003"
+            VALUE "OriginalFilename", "TeXSetup.EXE"
+            VALUE "ProductName", "TeXSetup Application"
+            VALUE "ProductVersion", "8, 1, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_WELCOME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 95
+        VERTGUIDE, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 181
+        HORZGUIDE, 30
+        HORZGUIDE, 40
+    END
+
+    IDD_PROPPAGE_ROOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 100
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+        HORZGUIDE, 30
+        HORZGUIDE, 182
+    END
+
+    IDD_PROPPAGE_PACKAGES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 175
+        VERTGUIDE, 184
+        VERTGUIDE, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+        HORZGUIDE, 30
+        HORZGUIDE, 56
+        HORZGUIDE, 180
+    END
+
+    IDD_PROPPAGE_REVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        VERTGUIDE, 25
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+        HORZGUIDE, 36
+    END
+
+    IDD_PROPPAGE_FILE_COPY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 85
+        VERTGUIDE, 96
+        VERTGUIDE, 235
+        VERTGUIDE, 240
+        VERTGUIDE, 280
+        VERTGUIDE, 282
+        VERTGUIDE, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 30
+        HORZGUIDE, 80
+        HORZGUIDE, 95
+        HORZGUIDE, 120
+        HORZGUIDE, 130
+        HORZGUIDE, 155
+    END
+
+    IDD_PROPPAGE_ERROR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 30
+    END
+
+    IDD_PROPPAGE_REBOOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 85
+        VERTGUIDE, 100
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 30
+        HORZGUIDE, 40
+    END
+
+    IDD_PROPPAGE_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 60
+        VERTGUIDE, 80
+        VERTGUIDE, 180
+        VERTGUIDE, 200
+        VERTGUIDE, 280
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 30
+        HORZGUIDE, 64
+    END
+
+    IDD_PROPPAGE_UNINSTALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 130
+        VERTGUIDE, 140
+        VERTGUIDE, 159
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 30
+    END
+
+    IDD_PROPPAGE_SOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 308
+        VERTGUIDE, 24
+        VERTGUIDE, 34
+        VERTGUIDE, 160
+        VERTGUIDE, 175
+        VERTGUIDE, 185
+        VERTGUIDE, 250
+        VERTGUIDE, 308
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 115
+    END
+
+    IDD_PROPPAGE_GETTPM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 25
+        VERTGUIDE, 90
+        VERTGUIDE, 100
+        VERTGUIDE, 265
+        VERTGUIDE, 270
+        VERTGUIDE, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 80
+        HORZGUIDE, 95
+        HORZGUIDE, 120
+        HORZGUIDE, 130
+        HORZGUIDE, 154
+    END
+
+    IDD_PROPPAGE_SCHEME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        VERTGUIDE, 24
+        VERTGUIDE, 48
+        VERTGUIDE, 150
+        VERTGUIDE, 170
+        VERTGUIDE, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 59
+        HORZGUIDE, 132
+        HORZGUIDE, 144
+        HORZGUIDE, 168
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About TeXSetup..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+    IDS_PROPSHT_CAPTION     "Wizard"
+    IDS_LOCAL_GUIDE         "Local Guide"
+    IDS_LATEX2E_REFERENCE   "LaTeX2e Reference Manual"
+    IDS_DVI_VIEWER          "DVI Viewer"
+    IDS_MAINTENANCE         "Maintenance"
+    IDS_CREATE_ALL_FORMAT_FILES "Create all formats files"
+    IDS_REFRESH_FILENAME_DATABASE "Rebuild ls-R filenames databases"
+    IDS_CREATE_LATEX_FORMAT_FILE "Create LaTeX format file"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_HELP                "Help"
+    IDS_FAQ                 "FAQ"
+    IDS_WELCOME_LICENSE     "Welcome to the TeXLive Setup Wizard !\r\n\r\nThis program will install the TeXLive software on your computer.\r\n\r\nYou will be prompted for several options. You may go back to any page during this process. When the setup will start, you will only be able to abort the process.\r\n\r\nClick 'Next' to proceed with installation.\r\n\r\nIn case of problems, please check http://www.fptex.org/"
+    IDS_FAILED_GET_DIRECTORY "Failed to get directory !"
+    IDS_CANCEL_SETUP        "Do you really want to abort the installation ?"
+    IDS_FILECOPY_COMPLETED  "All packages have been copied to the installation directory. A report was written to:\n\n%1\n\nTeXSetup will now configure the programs. Click Next to continue."
+    IDS_CANT_COPY_FILE      "Fatal error, cannot complete file copy :\nsource = %1\ndestination = %2"
+    IDS_CANT_OPEN_LOGFILE   "Fatal error, cannot open the log file."
+    IDS_ERROR_UNZIPPING     "Error while unzipping the following file:\n\n%1"
+    IDS_NOW_INSTALLING      "Now Installing :"
+    IDS_NOW_UNZIPPING       "Now Unpacking :"
+    IDS_NOW_DOWNLOADING     "Now Downloading :"
+    IDS_CANNOT_INSTALL_SHARED_FILE 
+                            "TeXSetup Wizard cannot install shared file %1. The reason might be that you don't have administrator privileges.\n\nLogin as Administrator an reinstall."
+    IDS_CANNOT_CREATE_TEMPFILE 
+                            "Fatal error, cannot create create temporary file."
+    IDS_CANNOT_MOVE_FILE    "Fatal error, cannont move file %s to %s"
+    IDS_CANNOT_CREATE_RUNONCE_VALUE 
+                            "Fatal error, cannot create runonce value."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CLICK_REBOOT        "Click `Reboot' to complete the setup."
+    IDS_REBOOT_COMPUTER     "Your computer needs to be restarted. You may defer restart, but the installation will work only after reboot."
+    IDS_WELCOME_QUICK       "Check this box and TeXSetup will run and install TeXLive without any further question. Later, you will be able to add packages."
+    IDS_OVERALL_DOWNLOADING "Overall Downloading :"
+    IDS_OVERALL_UNZIPPING   "Overall Unpacking :"
+    IDS_NOW_REMOVING        "Now Removing :"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ADD_PACKAGE         "Add TeX Package"
+    IDS_LICENSE_FPTEX       "Welcome to the fpTeX Setup Wizard !\r\n\r\nThis program will install the fpTeX 0.5 software on your computer.\r\n\r\n!!! This setup program is beta software.!!!\r\n!!! Check for updates on http://www.fptex.org/ !!!\r\n\r\nClick 'Next' to proceed with installation.\r\n\r\nThere will a delay of a few seconds before the next screen, meanwhile the setup will read packages descriptions."
+    IDS_CAPTION             "TeXLive Setup Wizard"
+    IDS_CAPTION_FPTEX       "fpTeX Setup Wizard"
+    IDS_TOOLTIP_QUICKINSTALL 
+                            "If you check this box, TeXLive will be installed with default settings,\nwithout asking any further question.\r\nYou will be able to add packages later."
+    IDS_TOOLTIP_ADMINISTRATOR 
+                            "You have Administrator rights, so you can install the software for all users."
+    IDS_TOOLTIP_XEMTEX 
+                            "The XEmacs editor and other support tools will be installed."
+    IDS_CONFIGURATION_ERROR "An error has occured while configuring the software."
+    IDS_FILECOPY_ERROR      "An error has occured while copying files."
+    IDS_CANNOT_RUN_PROCESS  "Cannot run the external command :\r\n%1"
+    IDS_CANT_GRAB_TPM_INTERNET 
+                            "Error: can't grab tpm files from the Internet.\r\nUrl was: %1"
+    IDS_CANT_UNZIP_TPM      "Error: can't unzip tpm files.\r\nFile was: %1"
+    IDS_NOW_PARSING         "Now Reading :"
+    IDS_CANT_READ_TPM_FILES "I was not able to read the TPM files. The setup will stop."
+    IDS_WELCOME_MAINTENANCE "Welcome to the TeXLive Setup Wizard !\r\n\r\nYou are running the Wizard in `maintenance' mode. You will be able to add new packages to your current setup or upgrade installed packages.\r\n\r\nIt is recommended that you have an active Internet connection to reach the most up-to-date repository of TeXLive software."
+    IDS_UNINSTALL_FILES_NOT_REMOVED 
+                            "TeXSetup has removed most of the files from the TeXLive installation.\nHowever, it won't remove some of the configurations files you may have edited\nor your local TeX files.\n\nIt is up to you to check what is left in %s\nand remove it if you want."
+    IDS_CLICK_FINISH        "Click `Finish' to complete the setup."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONFIGURATION_COMPLETED 
+                            "The programs have been configured. A report was written to:\n\n%1\n\nClick Next, to continue Setup."
+    IDS_TPM_FILES_READ      "TPM files have been read."
+    IDS_CREATE_MISSING_FORMAT_FILES "Create missing format files"
+    IDS_TEXSHELL_EDITOR     "TeXShell"
+    IDS_PFE_EDITOR          "PFE"
+    IDS_XEMACS_EDITOR       "XEmacs"
+    IDS_XEMACS_HELP         "About XEmacs"
+    IDS_PFE_HELP            "About PFE and TeX"
+    IDS_TEXSHELL_HELP       "About TeXShell"
+    IDS_UNINSTALL           "Uninstall TeXLive"
+    IDS_REMOTE_GUIDE        "fpTeX's Home"
+    IDS_TUG_GUIDE           "TeXLive at TUG"
+    IDS_UNINSTALL_COMPLETED "TeXLive is now completely removed from your computer. A report was written to:\n\n%1"
+    IDS_UNINSTALL_PROMPT    "You are about to remove the TeXLive software\nlocated in:\n%1\nwhose menus are defined in the %2 folder."
+    IDS_PREVIOUS_SETUP_DETECTED 
+                            "A previous setup has been detected in:\n%1\nand you asked to install again on:\n%2\nDo you want to continue ?"
+    IDS_UNINSTALL_WARNING   "WARNING: you are about to remove all files in\n%1\nAre you sure you want to go on ?"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_LIST_CHOICE DIALOG  0, 0, 160, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,134,50,13
+    PUSHBUTTON      "Cancel",IDCANCEL,103,150,50,13
+    LTEXT           "Static",IDC_STATIC_DESCRIPTION,7,7,146,13
+    COMBOBOX        IDC_COMBO_LIST_CHOICE,7,30,146,90,CBS_SIMPLE | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Radio1",IDC_LISTCHOICE_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,7,125,73,10
+    CONTROL         "Radio2",IDC_LISTCHOICE_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,7,138,73,10
+    CONTROL         "Radio3",IDC_LISTCHOICE_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,7,151,73,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_LIST_CHOICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        VERTGUIDE, 80
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 20
+        HORZGUIDE, 30
+        HORZGUIDE, 120
+        HORZGUIDE, 125
+        HORZGUIDE, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TEXSETUP            ICON                    "res\\texsetup.ico"
+IDI_UNINSTALL           ICON                    "res\\uninstall.ico"
+IDI_ICON1               ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LION_MINI           BITMAP                  "res\\lion-mini.bmp"
+IDB_DONE                BITMAP                  "res\\tree1.bmp"
+IDB_FAILED              BITMAP                  "res\\tree4.bmp"
+IDB_TREE_BOXES          BITMAP                  "res\\tree_box.bmp"
+IDB_TEXSETUP            BITMAP                  "res\\texsetup.bmp"
+IDB_INTERNET            BITMAP                  "res\\internet.bmp"
+IDB_CONNECT             BITMAP                  "res\\bitmap2.bmp"
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TeXSetup.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

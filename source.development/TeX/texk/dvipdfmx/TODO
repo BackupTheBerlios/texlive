@@ -1,0 +1,126 @@
+$Header: /home/xubuntu/berlios_backup/github/tmp-cvs/texlive/Repository/source.development/TeX/texk/dvipdfmx/TODO,v 1.1 2004/01/08 13:44:10 rahtz Exp $
+
+TODO: The todo list for dvipdfmx
+================================
+
+Last modified: April 4, 2002
+
+
+Jin-Hwan Cho
+------------
+
+o Stylistic variants for Type1 and TrueType for non CIDFonts
+
+o No-embedding option for Type1 and TrueType for non CIDFonts
+
+
+Shunsaku Hirata
+---------------
+
+o Version control
+
+o /W, /DW
+
+  from TFM or font file ?
+
+o TrueType
+
+  Check the ulCodePageRange* in the OS/2 table (?).
+
+o CMap embedding
+
+  Ability to embedd CMap resources. Especially ToUnicode CMaps.
+
+o OpenType Layout Feature support
+
+  GSUB:
+   Only `vert' feature is supported at present. The Script and LangSys tables
+   are ignored.
+
+   * `smpl' and `trad' substitute support for Chinese is needed.
+
+   * `jp78', `jp83', and `jp90' variants for Japanese:
+
+      jp78/83/90 features are intended to be used with WYSIWYG applications.
+      GSUB subtables for those features lists available variants for glyphs,
+      not a single-substitution.
+
+  BASE:
+   BASE supported is required for vertical wrting, to obtain x-origins of the
+   /W2 glyph metrics.
+
+o /W2, /DW2
+
+  from PDF Ref. v.1.3
+
+    Note: The  vhea  and  vmtx  tables that specify vertical metrics are
+    never used by a PDF viewer application. The only way to specify
+    vertical metrics in PDF is by means of the DW2 and W2 entries in a
+    CIDFont dictionary.
+
+  W2 array:
+    CID [w1y vx vy ...] ...
+   or
+    CID_first CID_last w1y vx vy ...
+
+    v = (vx, vy): horizontal-vertical origin displacement vector
+    w0: horizontal displacement (advance width)
+    w1 = (0, w1y): vertical displacemen vector
+
+  TrueType:
+    vx: from the BASE table. usually vx = w0/2
+    vy: ury (glyphs bbox) + top side bearing (vmtx table)
+    w1y: vertical advance width (vmtx table)
+
+
+  from OT spec. v.1.3
+
+    The Vertical Metrics Table
+    - Vertical Origin and Advance Height 
+
+     The y coordinate of a glyph's vertical origin is specified as
+    the sum of the glyph's top side bearing (recorded in the 'vmtx' table)
+    and the top (i.e. maximum y) of the glyph's bounding box. 
+
+    TrueType OpenType fonts contain glyph bounding box information
+    in the Glyph Data ('glyf') table. CFF OpenType fonts do not contain
+    glyph bounding box information, and so for these fonts the top of the
+    glyph's bounding box must be calculated from the charstring data in
+    the Compact Font Format ('CFF ') table. 
+
+    OpenType 1.3 introduced the optional Vertical Origin ('VORG')
+    table for CFF OpenType fonts, which records the y coordinate of
+    glyphs' vertical origins directly, thus obviating the need to
+    calculate bounding boxes as an intermediate step. This improves
+    accuracy and efficiency for CFF OpenType clients. 
+
+     The x coordinate of a glyph's vertical origin is not
+    specified in the 'vmtx' table. Vertical writing implementions may make
+    use of the baseline values in the Baseline ('BASE') table, if present,
+    in order to align the glyphs in the x direction as appropriate to the
+    desired vertical baseline. 
+
+    The advance height of a glyph starts from the y coordinate of the
+    glyph's vertical origin and advances downwards. Its endpoint is at the
+    y coordinate of the vertical origin of the next glyph in the run, by
+    default. Metric-adjustment OpenType layout features such as Vertical
+    Kerning ('vkrn') could modify the vertical advances in a manner
+    similar to kerning in horizontal mode. 
+
+    The Vertical Origin Table
+
+    If a 'VORG' table is present in a CFF OpenType font, a font client
+    may choose to obtain the y coordinate of a glyph's vertical
+    origin either:
+
+     1. directly from the 'VORG', or:
+     2. by first calculating the top of the glyph's bounding box
+        from the CFF charstring data and then adding to it the
+        glyph's top side bearing from the 'vmtx' table.
+
+    The former method offers the advantage of increased accuracy
+    and efficiency, since bounding box results calculated from the CFF
+    charstring as in the latter method can differ depending on the
+    rounding decisions and data types of the bounding box algorithm. The
+    latter method provides compatibility for font clients who are either
+    unaware of or choose not to support the 'VORG'.

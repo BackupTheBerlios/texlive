@@ -1,0 +1,99 @@
+# Makefile for texlive's extra scripts 
+# Public domain.
+
+ac_include ../make/paths.mk
+ac_include ../make/common.mk
+ac_include ../make/programs.mk
+
+
+LIVEPDFTEXLINKS = \
+	pdfplatex \
+	pdfmex \
+	pdftexinfo 
+
+LIVEPDFETEXLINKS = \
+	pdfxmltex \
+	pdfjadetex \
+	pdflatex \
+	context 
+
+LIVEOMEGALINKS = \
+	lambda 
+
+LIVEETEXLINKS = \
+	latex \
+	jadetex \
+	xmltex 
+
+LIVETEXLINKS = \
+	amstex \
+	eplain \
+	mex \
+	mltex \
+	mllatex \
+	physe \
+	phyzzx \
+	platex \
+	texsis \
+	texinfo 
+
+LIVESCRIPTS = \
+	cslatex \
+	csplain \
+	pdfcslatex \
+	pdfcsplain  \
+	pkfix \
+	mptopdf \
+	altpdftex  \
+	giftopng  \
+	pdfthumb \
+	ppower4 
+
+
+ALTPDFTEXCOPIES = altpdfetex altpdflatex altpdfamstex \
+	altpdfcontext
+
+all:  $(LIVESCRIPTS)
+default: all
+
+install: install-data install-exec
+
+# Auxiliary files.
+install-data:: 
+
+install-exec:
+	-$(SHELL) $(srcdir)/../mkinstalldirs $(scriptdir)
+	for s in $(LIVESCRIPTS); do \
+	  rm -f $(scriptdir)/$$s ; \
+	  $(INSTALL_SCRIPT) $(srcdir)/$$s $(scriptdir)/$$s; \
+	done
+	for s in $(LIVETEXLINKS); do \
+	  (cd $(scriptdir); ln -f -s tex $$s) \
+	done
+	for s in $(LIVEOMEGALINKS); do \
+	  (cd $(scriptdir); ln -f -s omega $$s) \
+	done
+	for s in $(LIVEPDFTEXLINKS); do \
+	  (cd $(scriptdir); ln -f -s pdftex $$s) \
+	done
+	for s in $(LIVEETEXLINKS); do \
+	  (cd $(scriptdir); ln -f -s etex $$s) \
+	done
+	for s in $(LIVEPDFETEXLINKS); do \
+	  (cd $(scriptdir); ln -f -s pdfetex $$s) \
+	done
+	for s in $(ALTPDFTEXCOPIES); do \
+	  rm -f $(scriptdir)/$$s ; \
+	  $(INSTALL_SCRIPT) $(srcdir)/altpdftex $(scriptdir)/$$s; \
+	done
+
+ac_include ../make/clean.mk
+
+config.status: $(srcdir)/configure
+	$(SHELL) $(srcdir)/configure --no-create --verbose
+
+Makefile: $(srcdir)/Makefile.in config.status
+	$(SHELL) config.status
+
+check:
+

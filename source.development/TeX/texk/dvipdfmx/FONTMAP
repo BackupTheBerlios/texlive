@@ -1,0 +1,341 @@
+$Header: /home/xubuntu/berlios_backup/github/tmp-cvs/texlive/Repository/source.development/TeX/texk/dvipdfmx/FONTMAP,v 1.1 2004/01/08 13:44:10 rahtz Exp $
+
+FONTMAP: CID-keyed font mapping file for dvipdfmx
+=================================================
+
+Last modified: April 22, 2002
+
+
+SYNOPSIS
+--------
+
+TFMNAME[@SFDNAME@] ENCNAME [:INDEX:][!]FONTNAME[,VARIANT] [OPTIONS]
+
+
+DESCRIPTION
+-----------
+
+1) TFMNAME[@SFDNAME@]
+
+   TFM name is specified in the field `TFMNAME' without extension (.tfm),
+   and the subfont definition name in the field `SFDNAME' without
+   extension (.sfd). For example, jbtm@UKS@ specifies the TFM names,
+   jbtm01 - jbtm35, used in the CJK package.
+
+2) ENCNAME
+
+   CMap resource name is specified in the field `ENCNAME'. It is used in
+   dvipdfmx to convert double-byte character codes to CID numbers.
+   For more details, see `README'.
+
+3) [:INDEX:][!]FONTNAME[,VARIANT]
+
+   Font name is specified in the field `FONTNAME' with or without
+   extension. The field `INDEX' is used for TrueType collections (.ttc)
+   to specify the font index number. In the case of ordinary TrueType
+   fonts (.ttf) the field should be `0'. The character `!' enables the
+   no-embedding option. The stylistic variants (Bold, Italic, BoldItalic)
+   are specified in the filed `VARIANT'. See examples below.
+
+4) [OPTIONS]
+
+   All options available in the original dvipdfm are also valid here.
+   However, the slant option [-s number] is ignored for vertical mode,
+   and the remap option [-r] is always ignored since it doesn't make
+   sense for CID-keyed fonts.
+
+
+** IMPORTANT **
+
+There is no default CMap, and the keyword `none' in the `ENCNAME' field is
+not allowed for CID-keyed font. Valid CMap name should be recorded in the
+`ENCNAME' field. Otherwise, the font will not be treated as a CID-keyed font.
+
+The format of the font mapping file is not compatible with the jpatch patch
+which expects keyword `none' or `default' in the `ENCNAME' field.
+
+If the keyword `none' or `default' is given in the `ENCNAME' field when
+the `SFDNAME' field is non-empty,  the name in the `FONTNAME' field will
+be used as the name of a Omega virtual font (.ovf). If the `FONTNAME' field
+is `none' or `default', the base name in the `TFMNAME' field will be used
+by default.
+
+Be sure that all CMaps used in the font mapping file are under the directory
+`${TEXMF}/dvipdfm/CMap', and all subfont definition files under the
+directory `${TEXMF}/dvipdfm/base'. CMap file name should coincide with CMap
+name.
+
+
+EXAMPLES
+--------
+
+1) Pre-defined CIDFonts
+
+   Minimal font information required by PDF viewers are available from
+   dvipdfmx built-in data. The built-in data does not contain any glyph
+   data required to render actual shape of each characters. Hence, PDF
+   viewers must substitute those fonts with suitable one available from
+   the system. The reproducibility and the correctness of document layout
+   opened on the remote system is not always guaranteed, however, it seems
+   not to cause any problems in general if you does not use special
+   characters in your document. Please use those fonts if you are sure that
+   all peoples that receives your documents have usable fonts installed on
+   their system. It greatly reduces size of resulting PDF documents because
+   no glyph data are embedded.
+
+   Here is the list of pre-defined CIDFonts in dvipdfmx.
+
+   ---------------------------------------------------------
+   Language              Acrobat pre-defined CIDFonts
+   ---------------------------------------------------------
+   Chinese/Simplified    STSong-Light
+   Chinese/Traditional   MHei-Medium, MSung-Light
+   Japanese              HeiseiMin-W3, HeiseiKakuGo-W5
+   Korean                HYGoThic-Medium, HYSMyeongJo-Medium
+   ---------------------------------------------------------
+
+   Font name is specified in the following form:
+
+   FONTNAME[,VARIANT]
+
+   Three stylistic variants, Bold, Italic, and BoldItalic can be used
+   in the `VARIANT' field.
+
+   o Japanese Example:
+
+   rml  H HeiseiMin-W3
+   gbm  H HeiseiKakuGo-W5
+   rmlv V HeiseiMin-W3
+   gbmv V HeiseiKakuGo-W5
+
+** PostScript "standard" fonts (Japanese) are also pre-defined.
+
+   Ryumin-Light, GothicBBB-Medium (Adobe-Japan1-2)
+
+   rml  H Ryumin-Light
+   gbm  H GothicBBB-Medium
+   rmlv V Ryumin-Light
+   gbmv V GothicBBB-Medium
+
+   Note. If you apply vertical version (WMode 1) of CMaps to horizontal
+   fonts (e.g., rml), dvipdfmx does horizontal positioning while PDF
+   viewers apply vertical positioning for that font.
+
+   Note. On some Mac platforms, Ryumin-Light and GothicBBB-Medium are not
+   handled properly by Adobe products. Especially, if you have those fonts
+   in the OCF format, you may want to avoid them.
+
+   o Korean Example (with the HLaTeX package):
+
+   hgtrb@KS-HLaTeX@  KSCms-UHC-H HYGoThic-Medium,Bold
+   hgtrbo@KS-HLaTeX@ KSCms-UHC-H HYGoThic-Medium,Bold -s .167
+   (or hgtrbo@KS-HLaTeX@ KSCms-UHC-H HYGoThic-Medium,BoldItalic)
+   hgtrm@KS-HLaTeX@  KSCms-UHC-H HYGoThic-Medium
+   hgtrmo@KS-HLaTeX@ KSCms-UHC-H HYGoThic-Medium -s .167
+   (or hgtrmo@KS-HLaTeX@ KSCms-UHC-H HYGoThic-Medium,Italic)
+
+   hmjsb@KS-HLaTeX@  KSCms-UHC-H HYSMyeongJo-Medium,Bold
+   hmjsbo@KS-HLaTeX@ KSCms-UHC-H HYSMyeongJo-Medium,Bold -s .167
+   (or hmjsbo@KS-HLaTeX@ KSCms-UHC-H HYSMyeongJo-Medium,BoldItalic)
+   hmjsm@KS-HLaTeX@  KSCms-UHC-H HYSMyeongJo-Medium
+   hmjsmo@KS-HLaTeX@ KSCms-UHC-H HYSMyeongJo-Medium -s .167
+   (or hmjsmo@KS-HLaTeX@ KSCms-UHC-H HYSMyeongJo-Medium,Italic)
+
+   Note. The slant weight of the stylistic variant, Italic (and BoldItalic),
+   highly depends on the implementation of the PDF viewers.
+
+
+2) OpenType CIDFonts (CIDFontType0)
+
+   Postscript CID-keyed fonts are supported only in the CFF OpenType format
+   with Type 2 charstrings. Font name is specified in the following form:
+
+   [!]FONTNAME[.otf][,VARIANT]
+
+   The character `!' enables the no-embedding option.
+
+   Three stylistic variants, Bold, Italic, and BoldItalic can be used
+   in the `VARIANT' field. Notice that those variants automatically
+   enable the no-embedding option.
+
+   o Kozuka-Mincho sold by Adobe:
+
+     kml H KozMinPro-Regular.otf
+
+   o CFF/OpenType version of Kochi CIDFont:
+
+     kochi-min H Kochi-Mincho.otf
+     kochi-got H Kochi-Gothic.otf
+
+   The suffix `.otf' is optional. Please use suffix `.otf' if needed.
+
+
+3) TrueType CIDFonts (CIDFontType2)
+
+   TrueType (.ttf) and TrueType collection (.ttc) are supported.
+   Font name and index number are specified in the following form:
+
+   :INDEX:[!]FONTNAME[.ttc|.ttf][,VARIANT]
+
+   Index number `0' must be used for ordinary TrueType fonts (.ttf)
+   to use those fonts as CIDFonts.
+
+   The character `!' enables the no-embedding option.
+
+   Three stylistic variants, Bold, Italic, and BoldItalic can be used
+   in the `VARIANT' field. Notice that those variants automatically
+   enable the no-embedding option.
+
+   o Japanese MS-Windows fonts
+
+     msmin H :0:msmincho
+     msgot H :0:msgothic
+
+     MS-Mincho with proportional latin and kana:
+
+     msminp H :1:msmincho
+
+   o Kochi is TrueType (not a collection):
+
+      kmin H :0:kochi-mincho
+      kgot H :0:kochi-gothic
+
+   o Korean MS-Windows fonts with stylistic variants (no-embedding)
+
+     jbtm@UKS@  UniKSCms-UCS2-H :0:!batang.ttc
+     jbtmo@UKS@ UniKSCms-UCS2-H :0:!batang.ttc,Italic
+     jbtb@UKS@  UniKSCms-UCS2-H :0:!batang.ttc,Bold
+     jbtbo@UKS@ UniKSCms-UCS2-H :0:!batang.ttc,BoldItalic
+
+   Note. It was reported that some symbol characters in KS X 1001 are
+   not defined correctly in the CMaps 'UniKS-UCS2-H(V)'. In this case
+   it is recommended to use the CMaps 'UniKSCms-UCS2-H(V)' which are
+   in the directory 'data/CMaps'.
+
+   o Baekmuk fonts (used with HLaTeX package)
+
+     bbtm@KS-HLaTeX@  KSCms-UHC-H :0:batang.ttf
+     bbtmo@KS-HLaTeX@ KSCms-UHC-H :0:batang.ttf -s .167
+
+
+Font Licensing Issue
+--------------------
+
+If you try to use the following font,
+
+  hgskai H :0:hgrsksj
+
+you will see the following message:
+
+  ** Embedding disabled due to licensing restriction **
+
+As this message indicates, font embedding is disabled because embedding
+is not allowed for this font. Also, please note that any documents that
+contains font with `Preview & Print' embedding licensing can be opened
+only for the purpose of previewing and/or printing. When fonts with this
+type of license are encountered, you will see the following message:
+
+  ** NOTICE: This document contains `Preview & Print' only licensed font **
+
+In this case, you cannot distribute resulting PDF document if you are not
+absolutely sure that you are not violating license you acquired.
+
+
+Other Encodings
+---------------
+
+Only 16-bit encodings are supported. The DVI format specification allows
+24-bit and 32-bit (signed) long character codes, though.
+
+1) JIS C 6226 (JIS78) character set with NEC extensions, ISO-2022-JP encoding:
+
+     rmlx Ext-H Ryumin-Light
+
+   or Shift-JIS encoding:
+
+     rmlsjx Ext-RKSJ-H Ryumin-Light
+
+2) Hojo-Kanji (JIS X 0212-1990): Adobe-Japan2 character collection
+
+     hjmin  Hojo-H :0:msmincho
+     hjminv Hojo-V :0:msmincho
+
+   You need ToUnicode CMap for the Adobe-Japan2 character collection.
+   If you cannot find it, copy and paste from the "ToUnicode Mapping File
+   Tutorial" (Adobe Technical Note #5411). Please change the CMap name and
+   the ordering string from `Adobe-Japan2-000' to `Adobe-Japan2-UCS2' and
+   from `Adobe_Japan2_000' to `Adobe_Japan2_UCS2', respectively. You must
+   save it as Adobe-Japan2-UCS2.
+
+3) Unicode encodings, Omega requires them. (not fully tested.)
+
+   o Chinese
+
+     ombkai UniCNS-UCS2-H :0:bkai00mp
+     ombsmi UniCNS-UCS2-H :0:bsmi00lp
+     omgkai UniGB-UCS2-H  :0:gkai00mp
+     omgbsn UniGB-UCS2-H  :0:gbsn00lp
+
+   o Japanese
+
+     omrml UniJIS-UCS2-H Ryumin-Light
+
+   o Korean
+
+     omgtm UniKSCms-UCS2-H HYGoThic-Medium
+     omubt UniKSCms-UCS2-H :0:batang
+
+4) UTF8 encodings with CJK package
+
+   It is possible to use several languages in a document with CJK package
+   via the UTF8 encoding.
+
+   cyberb@Unicode@ Identity-H   :0:cyberbit.ttf
+
+   Some part of Unicode can be overrided by another map entry, for example:
+
+   cyberb@Unicode-Hangul@ UniKSCms-UCS2-H HYSMyeongJo-Medium
+   cyberb@Unicode@        Identity-H      :0:cyberbit.ttf
+
+   Bitstream Cyberbit font is available at:
+
+   http://ftp.netscape.com/pub/communicator/extras/fonts/windows/ReadMe.htm
+
+
+Custom CMap and Specialized Font
+--------------------------------
+
+All TrueType font should have TrueType cmap (character codes to
+glyph indices mapping) table with platform ID 3, and encoding ID
+1. If you are using CMap `Dummy-H' having, say, registry string
+`My' and ordering string `Ordering' to map character codes used in
+the DVI file to CIDs, you must also have CMap resource named
+`My-Ordering-UCS2' (for encoding ID 1) which defines mapping from
+CID to character code used in the TrueType font:
+
+  myfont Dummy-H :0:myfont.ttf
+
+Some font that have 511 glyphs (one for .notdef), split into two
+single-byte fonts for use with `plain' TeX, tied up to a single
+CID-keyed font:
+
+  math1 Math-Symbol1 :0:msymbol.ttf
+  math2 Math-Symbol2 :0:msymbol.ttf
+
+Arabic as CID-Keyed font:
+
+  omarb UniArab-UCS2 :0:arabuni.ttf
+
+At present, accessing glyphs via glyph indices directly is not supported.
+It will be supported if someone need it.
+
+Please make your CMap resource file as simple as possible. The built-in
+CMap parser will fail if the structure of CMap file is too complicated.
+
+
+TODO
+----
+
+o Supports TrueType UCS4 cmap table
+
+o Supports TrueType Symbol cmap table (under consideration)

@@ -1,0 +1,104 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "TeXLive"="..\TeXLive\TeXLive.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name unzip
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TeXSetup"=".\TeXSetup.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name xmlparse
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name unzip
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name expat
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name geturl_static
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "expat"="..\EXPAT\LIB\expat.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "geturl"="..\geturl\geturl.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "geturl_static"="..\geturl_static\geturl_static.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "unzip"="..\unzip\unzip.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

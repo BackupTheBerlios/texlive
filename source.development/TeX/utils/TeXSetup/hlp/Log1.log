@@ -1,0 +1,247 @@
+HHC5010: Error: Cannot open "d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm". Compilation stopped.
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm
+
+HIDD_ROOT_DIALOG.HTM
+HID_INSTALL_TEXLIVE.HTM
+
+Compile time: 0 minutes, 1 second
+2	Topics
+4	Local links
+0	Internet links
+0	Graphics
+
+
+Created d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm, 11,379 bytes
+Compression increased file by 9,586 bytes.
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm
+
+texlive.html
+install.html
+explore.html
+editors.html
+support.html
+maintenance.html
+documentation.html
+HHC5003: Error: Compilation failed while compiling HIDD_ROOT_DIALOG.HTM.
+HHC3015: Warning: An alias has been created to "HID_INSTALL_TEXLIVE.htm" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winshell" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winedt" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#ntemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#xemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#texniccenter" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#perl" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#imagick" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#netpbm" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gnutools" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#freeghostscript" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#fptexwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#tugwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#runtexdoctk" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#systemdllupgrade" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#uninstall" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#runtexoffcdrom" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#cleanupcd" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#browsecd" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#internetaccess" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#selecteditor" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gsview" but the file does not exist
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_EXPLORECDROM.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_INSTALL.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_INTERNETACCESS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXLIVE".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_EDITORS.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_NTEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_XEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINSHELL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINEDT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXNICCENTER".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_SUPPORT.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_FREEGHOSTSCRIPT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_GNUTOOLS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_NETPBM".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_IMAGEMAGICK".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_PERL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_MAINTENANCE.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_DOCUMENTATION.htm".
+
+
+The following files were not compiled:
+HIDD_ROOT_DIALOG.HTM
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm
+
+texlive.html
+install.html
+explore.html
+editors.html
+support.html
+maintenance.html
+documentation.html
+HHC3015: Warning: An alias has been created to "install.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winshell" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winedt" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#ntemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#xemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#texniccenter" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#perl" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#imagick" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#netpbm" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gnutools" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#freeghostscript" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#fptexwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#tugwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#runtexdoctk" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#systemdllupgrade" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#uninstall" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#runtexoffcdrom" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#cleanupcd" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#browsecd" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#internetaccess" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#selecteditor" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gsview" but the file does not exist
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_EXPLORECDROM.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_INSTALL.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_INTERNETACCESS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXLIVE".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_EDITORS.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_NTEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_XEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINSHELL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINEDT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXNICCENTER".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_SUPPORT.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_FREEGHOSTSCRIPT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_GNUTOOLS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_NETPBM".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_IMAGEMAGICK".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_PERL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_MAINTENANCE.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_DOCUMENTATION.htm".
+
+
+The following files were not compiled:
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm
+
+texlive.html
+install.html
+explore.html
+editors.html
+support.html
+maintenance.html
+documentation.html
+HHC3015: Warning: An alias has been created to "install.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winshell" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winedt" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#ntemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#xemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#texniccenter" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#perl" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#imagick" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#netpbm" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gnutools" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#freeghostscript" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#fptexwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#tugwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#runtexdoctk" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#systemdllupgrade" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#uninstall" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#runtexoffcdrom" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#cleanupcd" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#browsecd" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#internetaccess" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#selecteditor" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gsview" but the file does not exist
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_EXPLORECDROM.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_INSTALL.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_INTERNETACCESS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXLIVE".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_EDITORS.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_NTEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_XEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINSHELL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINEDT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXNICCENTER".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_SUPPORT.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_FREEGHOSTSCRIPT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_GNUTOOLS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_NETPBM".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_IMAGEMAGICK".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_PERL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_MAINTENANCE.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_DOCUMENTATION.htm".
+
+
+The following files were not compiled:
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Source\fptex\win32\TeXLive\hlp\TeXLive.chm
+
+texlive.html
+install.html
+explore.html
+editors.html
+support.html
+maintenance.html
+documentation.html
+HHC3015: Warning: An alias has been created to "install.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winshell" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#winedt" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#ntemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#xemacs" but the file does not exist
+HHC3015: Warning: An alias has been created to "editors.html#texniccenter" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#perl" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#imagick" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#netpbm" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gnutools" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#freeghostscript" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#fptexwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#tugwebsite" but the file does not exist
+HHC3015: Warning: An alias has been created to "documentation.html#runtexdoctk" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#texlive" but the file does not exist
+HHC3015: Warning: An alias has been created to "maintenance.html#systemdllupgrade" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#uninstall" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#runtexoffcdrom" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#cleanupcd" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#browsecd" but the file does not exist
+HHC3015: Warning: An alias has been created to "install.html#internetaccess" but the file does not exist
+HHC3015: Warning: An alias has been created to "explore.html#selecteditor" but the file does not exist
+HHC3015: Warning: An alias has been created to "support.html#gsview" but the file does not exist
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_EXPLORECDROM.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_EXPLORECD_BROWSECD".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_EXPLORECD_SELECTEDITOR".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_EXPLORECD_RUNTEXOFFCD".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_EXPLORECD_CLEANUPCD".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_INSTALL.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_INTERNETACCESS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXLIVE".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_EDITORS.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_NTEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_XEMACS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINSHELL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_WINEDT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_TEXNICCENTER".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_INSTALL_SUPPORT.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_FREEGHOSTSCRIPT".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_GNUTOOLS".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_NETPBM".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_IMAGEMAGICK".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HID_SUPPORT_PERL".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_MAINTENANCE.htm".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "HIDD_DOCUMENTATION.htm".
+
+
+The following files were not compiled:

@@ -1,0 +1,6 @@
+make clean 
+find . -name config.cache -print -exec rm -f {} \;
+H=`pwd`
+rm -rf build; mkdir build; cd build
+../configure --prefix=$H --datadir=$H --enable-multiplatform &&
+make world 

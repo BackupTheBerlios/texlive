@@ -1,0 +1,393 @@
+<!--
+$Header: /home/xubuntu/berlios_backup/github/tmp-cvs/texlive/Repository/source.development/TeX/texk/dvipdfmx/index.html,v 1.1 2004/01/08 13:44:11 rahtz Exp $
+-->
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="author" content="The dvipdfmx Project Team">
+<META name="keywords" content="dvipdfm, DVI, PDF, TeX, Chinese, Japanese, Korean, CJK">
+<META name="description" content="CJK and CID-Keyed font support for dvipdfm">
+<STYLE type="text/css">
+<!--
+  BODY	{ margin: 1em; color: black; background: white }
+  H2	{ margin-top: 1.5em; margin-bottom: -.5em; margin-left: 1em; font: bold 16px Helvetica, Arial; color: navy }
+  B	{ color: navy }
+  UL	{ margin-top: 1em; margin-bottom: .5em; margin-left: 3em }
+
+  A:link	{ color: blue }
+  A:visited	{ color: green }
+  A:active	{ color: green }
+  A:hover	{ color: navy }
+
+  .page-title	{ margin-top: 2em; text-align: center }
+  .page-contrib	{ margin-top: 2em; margin-bottom: 2em; margin-right: 1em; text-align: right; font: bold 12px Helvetica, Arial; color: navy }
+  .page-intro	{ margin-top: .5em; margin-bottom: .5em; margin-left: 1em; margin-right: 1em }
+  .page-list	{ margin-top: 1em; margin-bottom: .5em; margin-left: 2em }
+  .page-links	{ margin-right: 1em; text-align: right; font: bold 12px Helvetica, Arial; color: navy }
+  .page-header	{ margin-top: 1em }
+  .page-foot	{ text-align: center; font: 12px Helvetica, Arial }
+
+  .font-header	{ font: bold 18px Helvetica, Arial; color: #ffffff }
+  .font-lang	{ font: bold 12px Helvetica, Arial; color: #c04040 }
+-->
+</STYLE>
+<TITLE>The dvipdfmx Project</TITLE>
+</HEAD>
+
+<BODY>
+<A name="top">
+<DIV class="page-title"><IMG src="doc/images/dvipdfmx.png" border=0></DIV>
+
+<DIV class="page-contrib">Powered by <a href="http://www.freebsd.org">FreeBSD</a>, <a href="http://www.apache.org">Apache</a>, and <a href="http://vim.sourceforge.net">Vim</a></DIV>
+
+<P class="page-intro">
+The <B>dvipdfm<i>x</i></B> (formerly <B>dvipdfm-cjk</B>) project provides an eXtended version of the <B><A href="http://gaspra.kettering.edu/dvipdfm/">dvipdfm</A></B>, a DVI to PDF translator developed by Mark A. Wicks.
+The primary goal of this project is to support multi-byte character encodings and large character sets for East Asian languages by CID-keyed font technology.
+The secondary goal is to support as many features as <B><A href="http://www.tug.org/applications/pdftex/">pdfTeX</A></B> developed by Han The Thanh.
+This project is a combined work of the <B>dvipdfm-jpn</B> project by Shunsaku Hirata and its modified one, <B>dvipdfm-kor</B>, by Jin-Hwan Cho.
+</P>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="source">
+<TABLE width=100% class="page-header"><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">Source</FONT></B></TD></TR></TABLE>
+
+<H2><A href="http://project.ktug.or.kr/dvipdfmx/snapshot/dvipdfmx-20021230.tar.gz">Current Snapshot</A> &nbsp; (December 30, 2002)</H2>
+<UL type="circle">
+<LI>Fixed a bug in writing null array.
+<LI>Fixed a bug in reading CMap and encoding files in MiKTeX.
+</UL>
+
+<H2><A href="http://cvs.ktug.or.kr/viewcvs/dvipdfmx/">CVS Repository</A></H2>
+<DIV class="page-list">
+The CVS repository for this project can be checked out through anonymous (pserver) CVS with the following instruction set. When prompted for a password for <I>anonymous</I>, simple press the Enter key.
+<PRE>
+cvs -d:pserver:anonymous@cvs.ktug.or.kr:/home/cvsroot login
+cvs -d:pserver:anonymous@cvs.ktug.or.kr:/home/cvsroot co dvipdfmx
+</PRE>
+</DIV>
+
+<H2><U>Documents</U></H2>
+<UL type="circle">
+<LI><A href="README">README</A></LI>
+<LI><A href="FONTMAP">FONTMAP</A> - How to write a CID-keyed font mapping file</LI>
+<LI><A href="ChangeLog">ChangeLog</A>, <A href="AUTHORS">AUTHORS</A>, <A href="BUGS">BUGS</A>, <A href="COPYING">COPYING</A>, <A href="INSTALL">INSTALL</A>, and <A href="TODO">TODO</A></LI>
+</UL>
+
+<H2><A href="data/">Resouces</A></H2>
+<UL type="circle">
+<LI><A href="data/config/dvipdfmx.cfg">dvipdfmx.cfg</A> - the configuration file for dvipdfm<i>x</i></LI>
+<LI><A href="data/config/cid-x.map">cid-x.map</A> - a sample CID-keyed font mapping file</A></LI>
+<LI><A href="data/CMap/">Available CMap files</A> - written by the dvipdfm<i>x</i> project team<BR>
+<FONT class="font-lang">[Note]</FONT> dvipdfm<i>x</i> finds CMap files from the directories inside <TT>texmf/dvipdfm/</TT> and then the directory specified in the variable <TT>CMAPINPUTS</TT> in <TT>texmf/web2c/texmf.cnf</TT>. For example, Linux users using Adobe's Acrobat Reader 5.x need to put the following line in <TT>texmf/web2c/texmf.cnf</TT>.
+<PRE>
+CMAPINPUTS = .;/usr/local/Acrobat5/Resource/Font//
+</PRE>
+</LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="binary">
+<TABLE class="page-header" width=100%><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">Binaries</FONT></B></TD></TR></TABLE>
+
+<H2><U>Unix/Linux/cygwin</U></H2>
+<UL type="circle">
+<LI>At first check the following four libraries are installed in your system:
+<PRE>
+/usr/local/lib/libkpathsea.a  - The Kpathsea library
+/usr/local/lib/libpng.a       - The PNG library
+/usr/local/lib/libz.a         - The zlib library
+/usr/local/lib/libcrypto.a    - The OpenSSL library
+</PRE>
+</LI>
+<LI>After fetching and extracting the source code, just run the following commands in order:
+<PRE>
+./configure
+make
+make install
+</PRE>
+</LI>
+<LI>Options are available after the command <TT>./configure</TT> to specify the directory of each library:
+<PRE>
+--with-kpathsea=DIR
+--with-png=DIR
+--with-zlib=DIR
+--with-openssl=DIR
+</PRE>
+</LI>
+</UL>
+
+<H2><U>Microsoft Windows</U></H2>
+<UL type="circle">
+<LI><B><A href="http://www.fsci.fuk.kindai.ac.jp/kakuto/win32-ptex/web2c73-e.html">W32TeX</A></B> <FONT class="font-lang">(in English and Japanese)</FONT> - A TeX implementation by Akira Kakuto based on Web2c-7.3.9; includes pTeX and many localized version of TeX related programs for Japanese.</LI>
+<LI><B><A href="http://project.ktug.or.kr/miktex-ktug/">MiKTeX-KTUG</A></B> <FONT class="font-lang">(in Korean)</FONT> - The <A href="http://www.ktug.or.kr">KTUG</A> distribution of modified version of <A href="http://www.miktex.org">MiKTeX</A> 2.1.</LI>
+</UL>
+
+<H2><U>MacOS</U></H2>
+<UL type="circle">
+<LI><B>dvipdfm<i>x</i> for Mac</B> <FONT class="font-lang">(in English)</FONT> - Binaries for MacClassic and MacOSX (Carbon Application) by <A href="mailto:kappa-y@nn.iij4u.or.jp">Yasuhiro Okazaki</A>; running on MacOS 7 or later, and latest MacOSX too; having its own GUI; options can be set through graphical interface.</LI>
+<LI><B><A href="http://www2.kumagaku.ac.jp/teacher/herogw/">JIS X0212 Charaqcters for pTeX</A></B> <FONT class="font-lang">(in Japanese)</FONT></LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="history">
+<TABLE width=100% class="page-header"><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">History</FONT></B></TD></TR></TABLE>
+
+<H2><A href="http://project.ktug.or.kr/dvipdfmx/snapshot/dvipdfm-cjk-20020605.tar.gz">dvipdfm-cjk</A> &nbsp; (June 5, 2002) &nbsp; <FONT color="#c04040">[obsolete]</FONT></H2>
+<UL type="circle">
+<LI>The last version of the dvipdfm-cjk project by Jin-Hwan Cho and Shunsaku Hirata.</LI>
+</UL>
+
+<H2><A href="http://project.ktug.or.kr/dvipdfmx/snapshot/dvipdfm-kor-20020305.tar.gz">dvipdfm-kor</A> &nbsp; (March 5, 2002) &nbsp; <FONT color="#c04040">[obsolete]</FONT></H2>
+<UL type="circle">
+<LI>The last version of the dvipdfm-kor project by Jin-Hwan Cho.</LI>
+</UL>
+
+<H2><A href="http://project.ktug.or.kr/dvipdfmx/snapshot/dvipdfm-jpn-20020107.tar.gz">dvipdfm-jpn</A> &nbsp; (January 7, 2002) &nbsp; <FONT color="#c04040">[obsolete]</FONT></H2>
+<UL type="circle">
+<LI>The last version of the dvipdfm-jpn project by Shunsaku Hirata.</LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="feature">
+<TABLE class="page-header" width=100%><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">Features</FONT></B></TD></TR></TABLE>
+
+<H2><U>Compatible TeX Variants</U></H2>
+
+<DIV class="page-list">
+In addtion to TeX/LaTeX, the following TeX variants and TeX/LaTeX packages are supported:
+</DIV>
+
+<UL type="circle">
+<LI><FONT class="font-lang">[All languages]</FONT> <B><A href="http://www.pragma-ade.com/">ConTeXt</A></B> and <B><A href="http://omega.cse.unsw.edu.au:8080/">Omega</A></B></LI>
+<LI><FONT class="font-lang">[Chinese, Japanese, and Korean]</FONT> <B><A href="http://cjk.ffii.org/">CJK-LaTeX package</A></B></LI>
+<LI><FONT class="font-lang">[Japanese]</FONT> <B><A href="http://www.ascii.co.jp/pb/ptex/">ASCII pTeX</A></B> and <B><A href="ftp://ftp.math.s.chiba-u.ac.jp/tex/">NTT jTeX</A></B> (with a virtual-font package, Akira Kakuto's <A href="ftp://akagi.ms.u-tokyo.ac.jp/pub/TeX/win32/vf-n2bk.tar.gz">vf-n2bk.tar.gz</A>)</LI>
+<LI><FONT class="font-lang">[Korean]</FONT> <B><A href="http://ftp.ktug.or.kr/mirrors/HLaTeX/hlatex.html">HLaTeX package</A></B></LI>
+</UL>
+
+<H2><U>Fonts Support</U></H2>
+
+<DIV class="page-list">
+Font embedding (as embedded subset) and no-embedding (with stylistic variants, Bold, Italic, and BoldItalic) are supported:
+</DIV>
+
+<UL type="circle">
+<LI><B>OpenType</B> - OpenType fonts (.otf) can be embedded as CIDFontType0 CID-keyed fonts. Correct glyph metrics are not written for CID-Keyed fonts.</LI>
+<LI><B>TrueType</B> - CJK TrueType fonts (.ttc and .ttf) can be embedded as CIDFontType 2 CID-keyed fonts.</LI>
+</UL>
+
+<DIV class="page-list">
+The following built-in fonts available with <a href="http://www.adobe.com/products/acrobat/readermain.html">Adobe Acrobat Reader</a> can be used.
+</DIV>
+
+<UL type="circle">
+<LI><B>CNS</B> - MHei-Medium, MSung-Light</LI>
+<LI><B>GB</B> - STSong-Light</LI>
+<LI><B>Japan</B> - HeiseiMin-W3, HeiseiKakuGo-W5</LI>
+<LI><B>Korea</B> - HYGoThic-Medium, HYSMyeongJo-Medium</LI>
+</UL>
+
+<H2><U>CMaps Support</U></H2>
+
+<UL type="circle">
+<LI>Only single- and double-byte characters are supported.</LI>
+<LI>Variable length encodings are not handled properly, this affects MetaPost PostScript inclusion.</LI>
+<LI>Rearranged font is not (and won't be) supported.</LI>
+<LI>CMap resource embedding is not supported yet.
+<LI>ToUnicode CMap is supported for Identity-H(V).
+</UL>
+
+<H2><U>Advanced Typographic Features</U></H2>
+
+<DIV class="page-list">
+OpenType Layout Featrue table is not fully supported. AAT extensions are not supported.
+</DIV>
+
+<UL type="circle">
+<LI>Supports ASCII pTeX's vertical writing extension.</LI>
+<LI>Experimental support for single glyph substitution is available for vertical glyph selection (OT Layout vert/vrt2 feature).</LI>
+<LI>Capability of extracting vertical glyph metrics is still lacking.</LI>
+</UL>
+
+<H2><U>PDF Encryption Support</U></H2>
+
+<UL type="circle">
+<LI>Encrypted PDF files can be generated if the -S option is given.</LI>
+<LI>Key bits (40-128 bits) and Permission flag are adjusted in the configuration file <A href="data/config/dvipdfmx.cfg">dvipdfmx.cfg</A> or with the options -K (Key bits) and -P (Permission flag).</LI>
+</UL>
+
+<H2><U>CJK Outlines (Bookmarks) Support</U></H2>
+
+<UL type="circle">
+<LI>It is possible to use CJK characters in PDF outlines (bookmarks), annotations, and document information.</LI>
+<LI>For this feature a new PDF special command <TT>\special{pdf:tounicode <I>CMap</I>}</TT> was implemented. After this command every CJK characters in PDF outlines, annotations, and document information will be converted to Unicode according to the given <I>CMap</I> file.</LI>
+<LI>In the case of LaTeX, put the following code in the preamble to convert CJK encodings to Unicode <I>(contributed by Akira Kakuto)</I>.</LI>
+<PRE>
+\AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}}   % GBK -> Unicode
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}       % EUC-JP -> Unicode
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} % SJIS -> Unicode
+\AtBeginDvi{\special{pdf:tounicode KSCms-UHC-UCS2}} % EUC-KR -> Unicode
+</PRE>
+</UL>
+
+<H2><U>ConTeXt Support</U></H2>
+
+<UL type="circle">
+<LI>The ConTeXt driver file <TT><A href="http://project.ktug.or.kr/dvipdfmx/contrib/context/spec-dpx.tex">spec-dpx.tex</A></TT> <FONT class="font-lang">(2002-11-28)</FONT> for dvipdfm<i>x</i> is contained in the distribution of <A href="http://www.pragma-ade.com/beta.htm">ConTeXt (Beta)</A> since December 4, 2002.</LI>
+<LI>To generate a DVI file to be converted to PDF by dvipdfm<i>x</i>, either use the following command line
+<PRE>
+texexec --output=dvipdfmx foo
+</PRE>
+or give the following command in the top of your ConTeXt file.
+<PRE>
+\setupoutput [dvipdfmx]
+</PRE>
+</LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="sample">
+<TABLE width=100% class="page-header"><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">Samples</FONT></B></TD></TR></TABLE>
+
+<DIV class="page-list">
+<a href="http://www.cs.wisc.edu/~ghost/doc/AFPL/">AFPL Ghostscript 7.x</a>, <a href="http://www.cs.wisc.edu/~ghost/doc/gnu/">GNU Ghstscript 6.x</a>, or <a href="http://www.adobe.com/products/acrobat/readermain.html">Acrobat Reader 4.x, 5.x</a> are required. Acrobat 3.0 does not support embedded CJK TrueType fonts. AFPL Ghostscript versions prior to 7.03 do not support vertical mode properly.
+</DIV>
+
+<H2><U>ConTeXt</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/zodiac.pdf">Chinese Zodiac</A></B> (GBK encoding; TrueType embedded, 182K bytes; <I>contributed by Lei Wang</I>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/bookmark.pdf">Chinese bookmark</A></B> <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/context/bookmark.tex">source</A>]</FONT> (GBK encoding; TrueType embedded, 43.9K bytes; <I>contributed by Lei Wang</I>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/help-test.pdf">PDF interaction with Chinese characters</A></B> <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/context/help-test.tex">source</A>]</FONT> (GBK encoding; TrueType embedded, 35.7K bytes; <I>contributed by Lei Wang</I>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/mp-test.pdf">MetaPost graphics with Chinese characters</A></B> <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/context/mp-test.tar.gz">source</A>]</FONT> (GBK encoding; TrueType embedded, 64.8K bytes; <I>contributed by Lei Wang</I>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/papersize.pdf">Page size changes</A></B> <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/context/papersize.tex">source</A>]</FONT> (Type1 embedded, 32.3K bytes)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/context/color-shading.pdf">Color shading example</A></B> <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/context/color-shading.tex">source</A>]</FONT> (Type1 embedded, 8.75K bytes)</LI>
+</UL>
+
+<H2><U>Omega</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/omega/cjkmix.pdf">CJK mixed text typesetted with Omega</A></B> (TrueType embedded, 102K bytes)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/omega/times.pdf">TimesNewRoman as a CID-Keyed font</A></B> (TrueType embedded, 194K bytes)</LI>
+</UL>
+
+<H2><U>CJK-LaTeX Package</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/hunmin.pdf">HunMinJeongEum</A></B> (UTF8 encoding; TrueType embedded, 88K bytes; <I>contributed by Kangsoo Kim</I>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/kwandong.pdf">KwanDongByeolGok</A></B> (UTF8 encoding; TrueType embedded, 257K bytes)</LI>
+<LI>CJK mixed text typesetted with CJK <FONT class="font-lang">[<A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/cjkmix2.tar.gz">source</A>]</FONT>
+(GB, Big5, JIS, SJIS, KS encodings; TrueType <B><A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/cjkmix2-embed.pdf">embedded</A></B>, 80K bytes;
+TrueType <B><A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/cjkmix2-noembed.pdf">non-embedded</A></B>, 9K bytes) <FONT class="font-lang">[need MS-Windows CJK TrueType fonts, simsun.ttc, mingliu.ttc, msmincho.ttc, and batang.ttc]</FONT>)</LI>
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/cjk-latex/unicode.pdf">UTF8 text with several languages mixed</A></B> (UTF8 encoding; TrueType (Bitstream Cyberbit) embedded, 43K bytes)</LI>
+</UL>
+
+<H2><U>ASCII pTeX</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/ptex/ama-no-kaguyama.pdf">Ama no Kaguyama</A></B> (TrueType embedded, 24K bytes)
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/ptex/kochi-cid.pdf">Kochi CID font</A></B> (OpenType embedded, 129K bytes)
+</UL>
+
+<H2><U>HLaTeX Package</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://project.ktug.or.kr/dvipdfmx/sample/hlatex/msfonts-kor.pdf">Korean MS-Windows TrueType Fonts</A></B> (KS encoding; TrueType non-embedded with stylistic variants, 19K bytes) <FONT class="font-lang">[need MS-Windows Korean TrueType fonts, batang.ttc and gulim.ttc]</FONT></LI>
+<LI><B><A href="http://www.ktug.or.kr/doc/lshort-kr/lshort-kr-sandol.pdf">The Not So Short Introduction to LaTeX2e (Korean)</A></B> (KS encoding; TrueType embedded, 1.1M bytes; <I>contributed by the lshort-kr project team</I>)</LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="link">
+<TABLE width=100% class="page-header"><TR><TD bgcolor="#52799e"><IMG src="doc/images/right_triangle.png" alt="&gt;" height=14 width=15><B><FONT class="font-header">Links</FONT></B></TD></TR></TABLE>
+
+<H2><U>CJK and TeX Information</U></H2>
+
+<UL type="circle">
+<LI><B><A href="ftp://ftp.ora.com/pub/examples/nutshell/ujip/doc/cjk.inf">CJK.INF</A></B> by Ken Lunde</LI>
+<LI><B><A href="http://www.geocities.com/fontboard/cjk/">CJK Quick Start</A></B> - Collection of Shareware/Freeware information for reading/writing CJK text on MS-Windows</LI>
+<LI><B><A href="http://www.matsusaka-u.ac.jp/~okumura/texfaq/">Japanese TeX FAQ</A></B> <FONT class="font-lang">(in Japanese)</FONT></LI>
+<LI><B><A href="http://www.ktug.or.kr/">KTUG</A></B> <FONT class="font-lang">(in Korean)</FONT> - Korean TeX Users Group</LI>
+</UL>
+
+<H2><U>Freely available CJK Fonts</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://www.adobe.com/products/acrobat/acrrasianfontpack.html">Adobe Acrobat Reader: Asian font packs</A></B> - Several OpenType CID-keyed fonts are freely available from Adobe for use with Adobe Acrobat Reader. It also contains several CMap resources for standard CJK encodings and useful ToUnicode CMaps.</LI>
+<LI><B><A href="http://www.yale.edu/chinesemac/pages/fonts.html">Chinese Mac Fonts</A></B> - Short explanation of font formats, list of available Chinese fonts, and font utilities.</LI>
+</UL>
+
+<DIV class="page-list">
+List of Unicode TrueType fonts that support CJK characters (along with pointer to font itself) can be found at:
+</DIV>
+<UL type="circle">
+<LI><B><A href="http://www.hclrss.demon.co.uk/unicode/fonts.html">Unicode fonts for Windows computers</A></B></LI>
+<LI><B><A href="http://www.ccss.de/slobo/unifonts.html">Multilingual Unicode TrueType Fonts in the Internet</A></B></LI>
+</UL>
+
+<DIV class="page-list">
+There are several fonts distributed under less restrictive license (some of them are very close to GPL).
+</DIV>
+<UL type="circle">
+<LI>Several Chinese TrueType fonts can be found from <A href="ftp://freebsd.sinica.edu.tw/pub/keith/">ftp://freebsd.sinica.edu.tw/pub/keith/</A>.</LI>
+<BR> &nbsp;
+<LI><B>Japanese Kochi Font</B> - available at <A href="http://www.on.ics.keio.ac.jp/~yasu/jp_fonts.html">My Linux Nihongo-ka Keikaku</A> <FONT class="font-lang">(in Japanese)</FONT> or <A href="http://www.on.ics.keio.ac.jp/~yasu/linux/fonts/">http://www.on.ics.keio.ac.jp/~yasu/linux/fonts/</A>.</LI>
+<P>
+Kochi (kochi-mincho and kochi-gothic) is a freely available Japanese TrueType font maintained by Yasuyuki Furukawa; covers JIS X 0201:1976/JIS X 0208:1983 character sets, supporting Unicode (UCS2) encoding, embedded bitmap fonts for several point sizes, supporting glyph substitution for vertical writing. This font is also available in PostScript CID-Keyed font format from <A href="http://kappa.allnet.ne.jp/Kochi-CID/index-e.html">CID-conversion kit for Kochi Mincho/Kochi Gothic</A> (suitalbe for use with Ghostscript).
+</P>
+<P>
+<B><U>N.B.</U></B> If you are using Xft/XFree86-4.1 with anti-aliased text displaying, all characters may be shown as blank. In that case, please re-compile FreeType library with TT_CONFIG_OPTION_EMBEDDED_BITMAPS option turned off.
+</P>
+<LI><B>Korean Baekmook Fonts</B> - available from <A href="http://www.mizi.com/en/prod/mizios/mos-pro2.htm">MIZI Research, Inc.</A> Baekmook font is open free for the public, but you should declare the license of "Baekmook font 21" for commercial purpose.</LI>
+<BR> &nbsp;
+<LI><B>Korean AsiaSoft Fonts</B> - available from <A href="http://asiasoft.co.kr">AsiaSoft Co. Ltd.</A></LI>
+</UL>
+
+<H2><U>Specifications</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://partners.adobe.com/asn/developer/technotes/main.html">Technical Notes</A></B> - available from Adobe Solutions Network: Developer Program.</LI>
+<LI><B><A href="http://www.microsoft.com/typography/otspec/default.htm">OpenType specification</A></B> - available from Microsoft Corporation.</LI>
+</UL>
+
+<H2><U>Related / Unrelated Links</U></H2>
+
+<UL type="circle">
+<LI><B><A href="http://www.gyve.org/gs-cjk/">The gs-cjk project</A></B> - A place dedicated to CJK and Ghostscript.</LI>
+<LI><B><A href="ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/">ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/</A></B> - A patch supporting pTeX for dvipsk from ASCII Corp.</LI>
+<LI><B><A href="http://www.sat.t.u-tokyo.ac.jp/~hideyuki/omega/dvipsk-ofm.patch">dvipsk-ofm.patch</A></B> - OFM patch for dvipsk-5.86 by Hideyuki Suzuki.</LI>
+<LI><B><A href="http://pfaedit.sourceforge.net/">PfaEdit</A></B> - A postscript font editor that lets you create your own postscript, truetype, opentype, cid-keyed and bitmap (bdf) fonts, or edit existing ones. Also lets you convert one format to another.</LI>
+</UL>
+
+<P class="page-links">
+<A href="#source">Source</A> | <A href="#binary">Binaries</A> | <A href="#history">History</A> | <A href="#feature">Features</A> | <A href="#sample">Samples</A> | <A href="#link">Links</A>
+</P>
+
+<A name="bottom">
+<HR size=1>
+
+<DIV class="page-foot">
+Copyright &copy; 2002, The dvipdfm<i>x</i> Project Team &lt;<A href="mailto:dvipdfmx@project.ktug.or.kr">dvipdfmx@project.ktug.or.kr</A>&gt;<BR>
+<A href="mailto:chofchof@ktug.or.kr">Jin-Hwan Cho</A> and Shunsaku Hirata<BR>
+Last modified: December 30, 2002
+</DIV>
+
+</BODY>
+</HTML>

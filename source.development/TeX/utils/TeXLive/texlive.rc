@@ -1,0 +1,351 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,1,0,0
+ PRODUCTVERSION 8,1,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "TeXLive MFC Application"
+            VALUE "FileVersion", "8, 1, 0, 0"
+            VALUE "InternalName", "TeXLive"
+            VALUE "LegalCopyright", "Copyright (C) 2001-2003"
+            VALUE "OriginalFilename", "TeXLive.EXE"
+            VALUE "ProductName", "TeXLive Application"
+            VALUE "ProductVersion", "8, 1, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_TEXLIVE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 10
+        RIGHTMARGIN, 353
+        VERTGUIDE, 10
+        VERTGUIDE, 352
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 303
+        HORZGUIDE, 10
+        HORZGUIDE, 255
+        HORZGUIDE, 262
+        HORZGUIDE, 302
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 25
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEXLIVE_DIALOG DIALOGEX 0, 0, 363, 313
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TeXLive"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Quit",IDCLOSE,304,239,48,16,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    PUSHBUTTON      "&Help",ID_HELP,304,228,48,16,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    CTEXT           "static",IDC_STATIC_WELCOME_TEXLIVE,10,262,342,40,
+                    SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    CONTROL         133,IDC_STATIC,"Static",SS_BITMAP,10,10,343,246,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TeXLive"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            128,IDC_STATIC,11,17,20,20
+    LTEXT           "TeXLive Version 8.1",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001-2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DIALOGBAR DIALOGEX 0, 0, 330, 32
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "TODO: layout dialog bar",IDC_STATIC,126,4,77,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About TeXLive..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_TEXLIVE_TEXMF    "Can't find your TeX Live texmf tree, aborting !"
+    IDS_WELCOME_TEXLIVE     "Welcome to TeXLive !"
+    IDS_CANNOT_RUN_PROCESS  "Unable to run this process:\r%1"
+    IDS_NO_TEXLIVE_BINARIES "No TeX Live binaries found out there !"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ACTION_PROGRESS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 24
+    END
+
+    IDD_DIALOG_LIST_CHOICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        VERTGUIDE, 80
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 20
+        HORZGUIDE, 30
+        HORZGUIDE, 120
+        HORZGUIDE, 125
+        HORZGUIDE, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ACTION_PROGRESS_DIALOG DIALOG  0, 0, 300, 31
+STYLE DS_SETFONT | WS_POPUP | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,186,10,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,243,10,50,14,NOT WS_VISIBLE
+    CTEXT           "Static",IDC_STATIC_ACTION,7,7,286,17,SS_CENTERIMAGE
+END
+
+IDD_DIALOG_LIST_CHOICE DIALOG  0, 0, 160, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,134,50,13
+    PUSHBUTTON      "Cancel",IDCANCEL,103,150,50,13
+    LTEXT           "Static",IDC_STATIC_DESCRIPTION,7,6,146,14
+    COMBOBOX        IDC_COMBO_LIST_CHOICE,7,30,146,90,CBS_SIMPLE | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Radio1",IDC_LISTCHOICE_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,7,125,73,10
+    CONTROL         "Radio2",IDC_LISTCHOICE_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,7,138,73,10
+    CONTROL         "Radio3",IDC_LISTCHOICE_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,7,151,73,10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TeXLive.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TEXLIVE             ICON                    "res\\texlive.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TFZ                 BITMAP                  "res\\tfz.bmp"
+IDR_TOOLBAR             BITMAP                  "res\\toolbar1.bmp"
+IDB_INTERNET		BITMAP			"res\\internet.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "Explore CD-Rom"
+    BEGIN
+        MENUITEM "Browse CD-Rom",               ID_EXPLORECD_BROWSECD
+        MENUITEM "Run TeX off CD-Rom",          ID_EXPLORECD_RUNTEXOFFCD
+    END
+    POPUP "TeXLive Software"
+    BEGIN
+        MENUITEM "Install on Hard Disk",        ID_INSTALL_TEXLIVE
+        MENUITEM "TeXLive Maintenance",         ID_MAINTENANCE_TEXLIVEMAINTENANCE
+        MENUITEM "Uninstall TeXLive",           ID_INSTALL_UNINSTALL
+    END
+    POPUP "Documentation"
+    BEGIN
+        MENUITEM "View TeXLive doc",            ID_DOCUMENTATION_TEXLIVE
+        MENUITEM "Run TeXDocTK",                ID_DOCUMENTATION_RUNTEXDOCTK
+        MENUITEM "Goto fpTeX Web site",         ID_DOCUMENTATION_FPTEXWEBSITE
+        MENUITEM "Goto TUG Web site",           ID_DOCUMENTATION_TUGWEBSITE
+    END
+END
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TeXLive.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

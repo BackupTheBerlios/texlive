@@ -1,0 +1,18 @@
+#!/bin/sh
+test -f /bin/sh5 && test -z "$RUNNING_SH5" \
+  && test x"`(uname -s) 2>&1`" = xULTRIX \
+  && { RUNNING_SH5=true; export RUNNING_SH5; exec /bin/sh5 $0 ${1+"$@"}; }
+RUNNING_SH5=
+
+test -f /bin/bsh && test -z "$RUNNING_BSH" \
+  && test x"`(uname -s) 2>&1`" = xAIX \
+  && { RUNNING_BSH=true; export RUNNING_BSH; exec /bin/bsh $0 ${1+"$@"}; }
+RUNNING_BSH=
+tex '\def\Link#1.a.b.c.{\expandafter\def\csname tex4ht\endcsname{\expandafter\def\csname tex4ht\endcsname{#1,html}\input tex4ht.sty }}\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCode"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\HCode '$2'.a.b.c.\input ' $1
+tex '\def\Link#1.a.b.c.{\expandafter\def\csname tex4ht\endcsname{\expandafter\def\csname tex4ht\endcsname{#1,html}\input tex4ht.sty }}\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCode"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\HCode '$2'.a.b.c.\input ' $1
+tex '\def\Link#1.a.b.c.{\expandafter\def\csname tex4ht\endcsname{\expandafter\def\csname tex4ht\endcsname{#1,html}\input tex4ht.sty }}\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCode"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\HCode '$2'.a.b.c.\input ' $1
+test -z "$3" || TEX4HTFONTSET=$3;export TEX4HTFONTSET
+tex4ht $1
+t4ht $1 $4 
+
+

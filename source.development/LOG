@@ -1,0 +1,8 @@
+make: *** No rule to make target `clean'.  Stop.
+creating cache ./config.cache
+checking whether make sets ${MAKE}... ../configure: line 748: cannot create temp file for here document: Read-only file system
+no
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... ../configure: line 897: cannot create temp file for here document: Read-only file system
+no
+configure: error: installation or configuration problem: C compiler cannot create executables.

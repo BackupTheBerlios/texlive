@@ -1,0 +1,9 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by TeXSetup.rc
+//
+#define HIDC_EXTRA_TEXMF                0x806a03e9    // IDD_PROPPAGE_ROOT [English (U.S.)]
+#define HIDC_HOME_TEXMF                 0x806a03ed    // IDD_PROPPAGE_ROOT [English (U.S.)]
+#define HIDC_LOCAL_TEXMF                0x806a03ec    // IDD_PROPPAGE_ROOT [English (U.S.)]
+#define HIDC_ROOTDIR                    0x806a03f1    // IDD_PROPPAGE_ROOT [English (U.S.)]
+#define HIDC_VAR_FONTS                  0x806a03ee    // IDD_PROPPAGE_ROOT [English (U.S.)]
+#define HIDC_VAR_TEXMF                  0x806a03ea    // IDD_PROPPAGE_ROOT [English (U.S.)]

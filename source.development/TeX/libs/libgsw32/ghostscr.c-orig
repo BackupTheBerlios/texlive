@@ -1,0 +1,658 @@
+/* 
+
+Ghostscript initialization for fpTeX.
+
+Copyright (C) 1998, 99 Free Software Foundation, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+
+/*
+  This function returns the directory name where GS is installed
+  and tries to make sure that either gswin32c.exe or gsdll32.dll
+  will run as expected, by checking GS_LIB.
+
+  Location of .exe or .dll :
+  - look into the PATH for the dll, if found this will be the directory
+  - look into the registry, warn user if a different version is found
+  - check for GS_LIB in the environment
+  - check for GS_LIB in the registry
+  - else build a GS_LIB from rule of thumb.
+*/
+
+#include <string.h>
+#include <win32lib.h>
+#include <gs32lib.h>
+
+extern char *xstrdup(const char *);
+
+#define GSDLL "gsdll32.dll"
+
+GSW32DLL char *gs_dir = NULL;
+GSW32DLL char *gs_dll = NULL;
+GSW32DLL char *gs_lib = NULL;
+GSW32DLL char *gs_revision = NULL;
+GSW32DLL char *gs_product_values[] = { "AFPL Ghostscript", "Aladdin Ghostscript", "GNU Ghostscript" };
+GSW32DLL char *gs_product = NULL;
+int gs_product_index;
+
+#define NB_ITEMS(x) (sizeof(x)/sizeof(x[0]))
+
+/*
+ *	Load the ghostscript dll gswin32.dll.                       
+ *	See the dll.txt file in the ghostscript source distribution.
+ *      We will try to make gs draw directly onto the screen/printer
+ *      device, as it is using SetDIBitsToDevice(), and it may use
+ *      more colors than the mem device has.
+ *      This may not be the more efficient, and we will have to see
+ *      how it adapts to printing. But there may be some overhead
+ *      at getting the whole dib at scale 1.
+ */
+GSW32DLL PFN_gsdll_init pgsdll_init;
+GSW32DLL PFN_gsdll_execute_begin pgsdll_execute_begin;
+GSW32DLL PFN_gsdll_execute_cont pgsdll_execute_cont;
+GSW32DLL PFN_gsdll_execute_end pgsdll_execute_end;
+GSW32DLL PFN_gsdll_exit pgsdll_exit;
+GSW32DLL PFN_gsdll_draw pgsdll_draw;
+GSW32DLL PFN_gsdll_get_bitmap_row pgsdll_get_bitmap_row;
+GSW32DLL PFN_gsdll_lock_device pgsdll_lock_device;
+
+GSW32DLL HANDLE hGsDll;
+
+BOOL is_gs_inreg = FALSE;
+BOOL is_gs_inpath = FALSE;
+
+const char *gslocpath[] = { "fonts", "..\\fonts", "..\\..\\fonts",
+			    "lib", "..\\lib" };
+
+
+int 
+gs_version_cmp(const char *sv1, const char *sv2)
+{
+  /*
+    Assuming version numbers of the form : xx.yy
+  */
+
+  int nv1x, nv1y, nv2x, nv2y;
+  if (sscanf(sv1, "%d.%d", &nv1x, &nv1y) == 2
+      && sscanf(sv2, "%d.%d", &nv2x, &nv2y) == 2) {
+    if (nv1x == nv2x) {
+      return nv1y - nv2y;
+    }
+    else {
+      return nv1x - nv2x;
+    }
+  }
+  else {
+    return -1;
+  }
+}
+
+char * gs_locate()
+{
+  LONG code;
+  char key[MAXPATHLEN];
+  HKEY hkey, hkeyroot;
+  DWORD version;
+  DWORD dwKeyType;
+  char data[MAXPATHLEN];
+  DWORD data_len;
+  char *fp;
+  char subkey[MAXPATHLEN];
+
+  /* FIXME : Should also try to open and read
+     gsview32.ini !
+     FIXME : What policy should we use ?
+     What if gs_dll is found in the registry and
+     in the PATH ?
+     Currently, it the PATH points to some gs version, then this
+     is the one that will be used. But in this case, GS_LIB must
+     be set too, else the registry will be looked for.
+  */
+
+#if 0
+  __asm int 3;
+#endif
+
+  if (SearchPath(NULL, GSDLL, NULL, sizeof(data), data, &fp) == 0) {
+    /* Not found */
+    is_gs_inpath = FALSE;
+    gs_dir = NULL;
+  }
+  else {
+    is_gs_inpath = TRUE;
+    gs_dir = xstrdup(data);
+    gs_dll = xstrdup(data);
+    /* be sure to take basename, whatever the path separator is. */
+    if (fp = strrchr(gs_dir, '\\')) {
+      *fp = '\0';
+    }
+    else if (fp = strrchr(gs_dir, '/')) {
+      *fp = '\0';
+    }
+  }
+
+  if (fp = getenv("GS_LIB")) {
+    gs_lib = xstrdup(fp);
+  }
+
+  if (gs_dir && gs_lib)
+    return gs_dir;
+
+  /* If using Win32, look in the registry for a value with
+   * the given name.  The registry value will be under the key
+   * HKEY_CURRENT_USER\Software\Aladdin Ghostscript\N.NN\GS_DLL
+   * or if that fails under the key
+   * HKEY_LOCAL_MACHINE\Software\Aladdin Ghostscript\N.NN\GS_DLL
+   * where "Aladdin Ghostscript" is actually gs_product
+   * and N.NN is the highest possible one.
+   */
+  
+  version = GetVersion();
+
+  if ((((HIWORD(version) & 0x8000) != 0)
+       && ((HIWORD(version) & 0x4000) == 0))) {
+    /* Win32s */
+    return gs_dir;
+  }
+
+  hkeyroot = HKEY_CURRENT_USER;
+
+  while (hkeyroot) {
+    DWORD i = 0;
+    char gs_rev[256];
+    int gs_rev_len = sizeof(gs_rev);
+    FILETIME ft;
+
+    hkey = 0;
+    for (gs_product_index = 0; 
+	 gs_product_index < NB_ITEMS(gs_product_values); 
+	 gs_product_index++) {
+      sprintf(key, "Software\\%s", gs_product_values[gs_product_index]);
+      if (RegOpenKeyEx(hkeyroot, key, 0, KEY_ENUMERATE_SUB_KEYS, &hkey)
+	  == ERROR_SUCCESS) {
+	gs_product = gs_product_values[gs_product_index];
+	break;
+      }
+    }
+    
+    if (hkey) {
+      gs_revision = xstrdup("0.00");
+      while ((code = RegEnumKeyEx(hkey, i, gs_rev, &gs_rev_len,
+								  NULL, NULL, NULL, &ft)) == ERROR_SUCCESS) {
+		if (gs_version_cmp(gs_rev, gs_revision) > 0) {
+		  free(gs_revision);
+		  gs_revision = xstrdup(gs_rev);
+		}
+		i++;
+		gs_rev_len = sizeof(gs_rev);
+      } 
+      RegCloseKey(hkey);
+      if (code != ERROR_NO_MORE_ITEMS) {
+		Win32Error("initialize_gs/RegEnumKeyEx");
+      }
+      break;
+    }
+    hkeyroot = (hkeyroot == HKEY_CURRENT_USER ?
+		HKEY_LOCAL_MACHINE : 0);
+  }
+
+  if (!hkeyroot) {
+    return gs_dir;
+  }
+
+
+  sprintf(key, "Software\\%s\\%s", gs_product, gs_revision);
+  
+  if (RegOpenKeyEx(hkeyroot, key, 0, KEY_READ, &hkey)
+      != ERROR_SUCCESS) {
+    Win32Error("initialize_gs/RegOpenKeyEx");
+    return NULL;
+  }
+  
+  dwKeyType = REG_SZ;
+
+  if (gs_dir == NULL) {
+    strcpy(subkey, "GS_DLL");
+    data_len = sizeof(data);
+    code = RegQueryValueEx(hkey, subkey, NULL, &dwKeyType,
+						   data, &data_len);
+    if (code == ERROR_SUCCESS) {
+      char *fp;
+      gs_dll = xstrdup(data);
+      if (fp = strrchr(data, '\\')) 
+		*fp = '\0';
+      else if (fp = strrchr(data, '/')) 
+		*fp = '\0';
+      gs_dir = xstrdup(data);
+    }
+    else {
+      Win32Error("initialize_gs/RegQueryValueEx/GS_DLL");
+      RegCloseKey(hkey);
+      return NULL;
+    }
+    
+    /* If gs_dir is taken from the registry, then so should
+       gs_lib be. */
+    if (gs_lib == NULL) {
+      strcpy(subkey, "GS_LIB");
+      data_len = sizeof(data);
+      code = RegQueryValueEx(hkey, subkey, NULL, &dwKeyType,
+			     data, &data_len);
+      if (code == ERROR_SUCCESS) {
+	gs_lib = xstrdup(data);
+      }
+      else {
+	Win32Error("initialize_gs/RegQueryValueEx/GS_LIB");
+      }
+    }
+  }
+
+  /* try to set up a valid GS_LIB if not found */
+  if (gs_dir && !gs_lib) {
+    int fa, i;    
+    char **s, *tmp;
+    gs_lib = xstrdup(gs_dir);
+    for (i = 0, s = gslocpath;
+	 i < sizeof(gslocpath)/sizeof(gslocpath[0]);
+	 i++, s++) {
+      sprintf(data, "%s\\%s", gs_dir, *s);
+      if ((fa = GetFileAttributes(data)) != 0xFFFFFFFF 
+	  && (fa & FILE_ATTRIBUTE_DIRECTORY)) {
+	tmp = gs_lib;
+	gs_lib = concat3(gs_lib, ";", data);
+	free(tmp);
+      }
+    }
+
+    if (gs_lib) {
+      strcpy(data, "GS_LIB=");
+      strcat(data, gs_lib);
+      _putenv(data);
+    }
+  }
+
+  RegCloseKey(hkey);
+  return gs_dir;
+}
+
+BOOL gs_dll_initialize()
+{
+
+  if (!gs_dll || !*gs_dll) {
+    fprintf(stderr, "gs not initialized, dll not found.\n");
+    return FALSE;
+  }
+  
+  if ((hGsDll = LoadLibrary(gs_dll)) == NULL) {
+    fprintf(stderr, "LoadLibrary: Can't load gs dll.");
+    return FALSE;
+  }
+  
+  pgsdll_init = (PFN_gsdll_init)GetProcAddress(hGsDll, "gsdll_init");
+  pgsdll_execute_begin = (PFN_gsdll_execute_begin)GetProcAddress(hGsDll, "gsdll_execute_begin");
+  pgsdll_execute_cont = (PFN_gsdll_execute_cont)GetProcAddress(hGsDll, "gsdll_execute_cont");
+  pgsdll_execute_end = (PFN_gsdll_execute_end)GetProcAddress(hGsDll, "gsdll_execute_end");
+  pgsdll_exit = (PFN_gsdll_exit)GetProcAddress(hGsDll, "gsdll_exit");
+  pgsdll_draw = (PFN_gsdll_draw)GetProcAddress(hGsDll, "gsdll_draw");
+  pgsdll_get_bitmap_row = (PFN_gsdll_get_bitmap_row)GetProcAddress(hGsDll, "gsdll_get_bitmap_row");
+  pgsdll_lock_device = (PFN_gsdll_lock_device)GetProcAddress(hGsDll, "gsdll_lock_device");
+  if (!pgsdll_init || !pgsdll_execute_begin || !pgsdll_execute_cont
+      || !pgsdll_execute_end || !pgsdll_exit || !pgsdll_draw
+      || !pgsdll_get_bitmap_row || !pgsdll_lock_device) {
+    fprintf(stderr, "Not all functions found in gs dll.\n");
+    return FALSE;
+  }
+  
+  return TRUE;
+}
+
+BOOL gs_dll_release()
+{
+  if (hGsDll) {
+    FreeLibrary(hGsDll);
+    return TRUE;
+  }
+
+  return FALSE;
+}
+/* 
+
+Ghostscript initialization for fpTeX.
+
+Copyright (C) 1998, 99 Free Software Foundation, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+
+/*
+  This function returns the directory name where GS is installed
+  and tries to make sure that either gswin32c.exe or gsdll32.dll
+  will run as expected, by checking GS_LIB.
+
+  Location of .exe or .dll :
+  - look into the PATH for the dll, if found this will be the directory
+  - look into the registry, warn user if a different version is found
+  - check for GS_LIB in the environment
+  - check for GS_LIB in the registry
+  - else build a GS_LIB from rule of thumb.
+*/
+
+#include <string.h>
+#include <win32lib.h>
+#include <gs32lib.h>
+
+extern char *xstrdup(const char *);
+
+#define GSDLL "gsdll32.dll"
+
+GSW32DLL char *gs_dir = NULL;
+GSW32DLL char *gs_dll = NULL;
+GSW32DLL char *gs_lib = NULL;
+GSW32DLL char *gs_revision = NULL;
+GSW32DLL char *gs_product_values[] = { "AFPL Ghostscript", "Aladdin Ghostscript", "GNU Ghostscript" };
+GSW32DLL char *gs_product = NULL;
+int gs_product_index;
+
+#define NB_ITEMS(x) (sizeof(x)/sizeof(x[0]))
+
+/*
+ *	Load the ghostscript dll gswin32.dll.                       
+ *	See the dll.txt file in the ghostscript source distribution.
+ *      We will try to make gs draw directly onto the screen/printer
+ *      device, as it is using SetDIBitsToDevice(), and it may use
+ *      more colors than the mem device has.
+ *      This may not be the more efficient, and we will have to see
+ *      how it adapts to printing. But there may be some overhead
+ *      at getting the whole dib at scale 1.
+ */
+GSW32DLL PFN_gsdll_init pgsdll_init;
+GSW32DLL PFN_gsdll_execute_begin pgsdll_execute_begin;
+GSW32DLL PFN_gsdll_execute_cont pgsdll_execute_cont;
+GSW32DLL PFN_gsdll_execute_end pgsdll_execute_end;
+GSW32DLL PFN_gsdll_exit pgsdll_exit;
+GSW32DLL PFN_gsdll_draw pgsdll_draw;
+GSW32DLL PFN_gsdll_get_bitmap_row pgsdll_get_bitmap_row;
+GSW32DLL PFN_gsdll_lock_device pgsdll_lock_device;
+
+GSW32DLL HANDLE hGsDll;
+
+BOOL is_gs_inreg = FALSE;
+BOOL is_gs_inpath = FALSE;
+
+const char *gslocpath[] = { "fonts", "..\\fonts", "..\\..\\fonts",
+			    "lib", "..\\lib" };
+
+
+int 
+gs_version_cmp(const char *sv1, const char *sv2)
+{
+  /*
+    Assuming version numbers of the form : xx.yy
+  */
+
+  int nv1x, nv1y, nv2x, nv2y;
+  if (sscanf(sv1, "%d.%d", &nv1x, &nv1y) == 2
+      && sscanf(sv2, "%d.%d", &nv2x, &nv2y) == 2) {
+    if (nv1x == nv2x) {
+      return nv1y - nv2y;
+    }
+    else {
+      return nv1x - nv2x;
+    }
+  }
+  else {
+    return -1;
+  }
+}
+
+char * gs_locate()
+{
+  LONG code;
+  char key[MAXPATHLEN];
+  HKEY hkey, hkeyroot;
+  DWORD version;
+  DWORD dwKeyType;
+  char data[MAXPATHLEN];
+  DWORD data_len;
+  char *fp;
+  char subkey[MAXPATHLEN];
+
+  /* FIXME : Should also try to open and read
+     gsview32.ini !
+     FIXME : What policy should we use ?
+     What if gs_dll is found in the registry and
+     in the PATH ?
+     Currently, it the PATH points to some gs version, then this
+     is the one that will be used. But in this case, GS_LIB must
+     be set too, else the registry will be looked for.
+  */
+
+#if 0
+  __asm int 3;
+#endif
+
+  if (SearchPath(NULL, GSDLL, NULL, sizeof(data), data, &fp) == 0) {
+    /* Not found */
+    is_gs_inpath = FALSE;
+    gs_dir = NULL;
+  }
+  else {
+    is_gs_inpath = TRUE;
+    gs_dir = xstrdup(data);
+    gs_dll = xstrdup(data);
+    /* be sure to take basename, whatever the path separator is. */
+    if (fp = strrchr(gs_dir, '\\')) {
+      *fp = '\0';
+    }
+    else if (fp = strrchr(gs_dir, '/')) {
+      *fp = '\0';
+    }
+  }
+
+  if (fp = getenv("GS_LIB")) {
+    gs_lib = xstrdup(fp);
+  }
+
+  if (gs_dir && gs_lib)
+    return gs_dir;
+
+  /* If using Win32, look in the registry for a value with
+   * the given name.  The registry value will be under the key
+   * HKEY_CURRENT_USER\Software\Aladdin Ghostscript\N.NN\GS_DLL
+   * or if that fails under the key
+   * HKEY_LOCAL_MACHINE\Software\Aladdin Ghostscript\N.NN\GS_DLL
+   * where "Aladdin Ghostscript" is actually gs_product
+   * and N.NN is the highest possible one.
+   */
+  
+  version = GetVersion();
+
+  if ((((HIWORD(version) & 0x8000) != 0)
+       && ((HIWORD(version) & 0x4000) == 0))) {
+    /* Win32s */
+    return gs_dir;
+  }
+
+  hkeyroot = HKEY_CURRENT_USER;
+
+  while (hkeyroot) {
+    DWORD i = 0;
+    char gs_rev[256];
+    int gs_rev_len = sizeof(gs_rev);
+    FILETIME ft;
+
+    hkey = 0;
+    for (gs_product_index = 0; 
+	 gs_product_index < NB_ITEMS(gs_product_values); 
+	 gs_product_index++) {
+      sprintf(key, "Software\\%s", gs_product_values[gs_product_index]);
+      if (RegOpenKeyEx(hkeyroot, key, 0, KEY_ENUMERATE_SUB_KEYS, &hkey)
+	  == ERROR_SUCCESS) {
+	gs_product = gs_product_values[gs_product_index];
+	break;
+      }
+    }
+    
+    if (hkey) {
+      gs_revision = xstrdup("0.00");
+      while ((code = RegEnumKeyEx(hkey, i, gs_rev, &gs_rev_len,
+								  NULL, NULL, NULL, &ft)) == ERROR_SUCCESS) {
+		if (gs_version_cmp(gs_rev, gs_revision) > 0) {
+		  free(gs_revision);
+		  gs_revision = xstrdup(gs_rev);
+		}
+		i++;
+		gs_rev_len = sizeof(gs_rev);
+      } 
+      RegCloseKey(hkey);
+      if (code != ERROR_NO_MORE_ITEMS) {
+		Win32Error("initialize_gs/RegEnumKeyEx");
+      }
+      break;
+    }
+    hkeyroot = (hkeyroot == HKEY_CURRENT_USER ?
+		HKEY_LOCAL_MACHINE : 0);
+  }
+
+  if (!hkeyroot) {
+    return gs_dir;
+  }
+
+
+  sprintf(key, "Software\\%s\\%s", gs_product, gs_revision);
+  
+  if (RegOpenKeyEx(hkeyroot, key, 0, KEY_READ, &hkey)
+      != ERROR_SUCCESS) {
+    Win32Error("initialize_gs/RegOpenKeyEx");
+    return NULL;
+  }
+  
+  dwKeyType = REG_SZ;
+
+  if (gs_dir == NULL) {
+    strcpy(subkey, "GS_DLL");
+    data_len = sizeof(data);
+    code = RegQueryValueEx(hkey, subkey, NULL, &dwKeyType,
+						   data, &data_len);
+    if (code == ERROR_SUCCESS) {
+      char *fp;
+      gs_dll = xstrdup(data);
+      if (fp = strrchr(data, '\\')) 
+		*fp = '\0';
+      else if (fp = strrchr(data, '/')) 
+		*fp = '\0';
+      gs_dir = xstrdup(data);
+    }
+    else {
+      Win32Error("initialize_gs/RegQueryValueEx/GS_DLL");
+      RegCloseKey(hkey);
+      return NULL;
+    }
+    
+    /* If gs_dir is taken from the registry, then so should
+       gs_lib be. */
+    if (gs_lib == NULL) {
+      strcpy(subkey, "GS_LIB");
+      data_len = sizeof(data);
+      code = RegQueryValueEx(hkey, subkey, NULL, &dwKeyType,
+			     data, &data_len);
+      if (code == ERROR_SUCCESS) {
+	gs_lib = xstrdup(data);
+      }
+      else {
+	Win32Error("initialize_gs/RegQueryValueEx/GS_LIB");
+      }
+    }
+  }
+
+  /* try to set up a valid GS_LIB if not found */
+  if (gs_dir && !gs_lib) {
+    int fa, i;    
+    char **s, *tmp;
+    gs_lib = xstrdup(gs_dir);
+    for (i = 0, s = gslocpath;
+	 i < sizeof(gslocpath)/sizeof(gslocpath[0]);
+	 i++, s++) {
+      sprintf(data, "%s\\%s", gs_dir, *s);
+      if ((fa = GetFileAttributes(data)) != 0xFFFFFFFF 
+	  && (fa & FILE_ATTRIBUTE_DIRECTORY)) {
+	tmp = gs_lib;
+	gs_lib = concat3(gs_lib, ";", data);
+	free(tmp);
+      }
+    }
+
+    if (gs_lib) {
+      strcpy(data, "GS_LIB=");
+      strcat(data, gs_lib);
+      _putenv(data);
+    }
+  }
+
+  RegCloseKey(hkey);
+  return gs_dir;
+}
+
+BOOL gs_dll_initialize()
+{
+
+  if (!gs_dll || !*gs_dll) {
+    fprintf(stderr, "gs not initialized, dll not found.\n");
+    return FALSE;
+  }
+  
+  if ((hGsDll = LoadLibrary(gs_dll)) == NULL) {
+    fprintf(stderr, "LoadLibrary: Can't load gs dll.");
+    return FALSE;
+  }
+  
+  pgsdll_init = (PFN_gsdll_init)GetProcAddress(hGsDll, "gsdll_init");
+  pgsdll_execute_begin = (PFN_gsdll_execute_begin)GetProcAddress(hGsDll, "gsdll_execute_begin");
+  pgsdll_execute_cont = (PFN_gsdll_execute_cont)GetProcAddress(hGsDll, "gsdll_execute_cont");
+  pgsdll_execute_end = (PFN_gsdll_execute_end)GetProcAddress(hGsDll, "gsdll_execute_end");
+  pgsdll_exit = (PFN_gsdll_exit)GetProcAddress(hGsDll, "gsdll_exit");
+  pgsdll_draw = (PFN_gsdll_draw)GetProcAddress(hGsDll, "gsdll_draw");
+  pgsdll_get_bitmap_row = (PFN_gsdll_get_bitmap_row)GetProcAddress(hGsDll, "gsdll_get_bitmap_row");
+  pgsdll_lock_device = (PFN_gsdll_lock_device)GetProcAddress(hGsDll, "gsdll_lock_device");
+  if (!pgsdll_init || !pgsdll_execute_begin || !pgsdll_execute_cont
+      || !pgsdll_execute_end || !pgsdll_exit || !pgsdll_draw
+      || !pgsdll_get_bitmap_row || !pgsdll_lock_device) {
+    fprintf(stderr, "Not all functions found in gs dll.\n");
+    return FALSE;
+  }
+  
+  return TRUE;
+}
+
+BOOL gs_dll_release()
+{
+  if (hGsDll) {
+    FreeLibrary(hGsDll);
+    return TRUE;
+  }
+
+  return FALSE;
+}

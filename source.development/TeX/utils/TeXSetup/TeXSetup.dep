@@ -1,0 +1,770 @@
+# Microsoft Developer Studio Generated Dependency File, included by TeXSetup.mak
+
+.\ConfigPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\Environment.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\environment.h"\
+	".\Log.h"\
+	".\Registry.h"\
+	".\shelllinkdata.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TPM.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\ErrorPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\FileCopyPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\FileDirectory.cpp : \
+	".\FileDirectory.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+..\..\texk\kpathsea\getopt.c : \
+	"..\..\texk\kpathsea\getopt.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	"c:\program files\microsoft sdk\include\winefs.h"\
+	
+
+..\..\texk\kpathsea\getopt1.c : \
+	"..\..\texk\kpathsea\getopt.h"\
+	
+
+.\GetTPMPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\KeyValFile.cpp : \
+	".\KeyValFile.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\ListChoiceDlg.cpp : \
+	".\ListChoiceDlg.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\Log.cpp : \
+	".\Log.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\PackagesPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\RebootPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\environment.h"\
+	".\Log.h"\
+	".\RebootPage.h"\
+	".\shelllinkdata.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TPM.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\Registry.cpp : \
+	".\Registry.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\ReviewPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\RootPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\ShellLinkData.cpp : \
+	".\shelllinkdata.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\SourcePage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\ListChoiceDlg.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\texinstall.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	"..\unzip\globals.h"\
+	"..\unzip\unzip.h"\
+	"..\unzip\unzpriv.h"\
+	"..\unzip\win32\w32cfg.h"\
+	"..\unzip\windll\decs.h"\
+	"..\unzip\windll\structs.h"\
+	"..\unzip\windll\windll.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\FileDirectory.h"\
+	".\GetTPMPage.h"\
+	".\KeyValFile.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\Registry.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TeXSetup.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	"..\..\texk\kpathsea\getopt.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\LimitSingleInstance.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TeXSetup.rc : \
+	".\res\internet.bmp"\
+	".\res\lion-mini.bmp"\
+	".\res\texsetup.bmp"\
+	".\res\TeXSetup.ico"\
+	".\res\TeXSetup.rc2"\
+	".\res\tree1.bmp"\
+	".\res\tree4.bmp"\
+	".\res\tree_box.bmp"\
+	".\res\uninstall.ico"\
+	".\resource.hm"\
+	
+
+.\TeXSetupCommandLineInfo.cpp : \
+	"..\..\libs\geturl\geturl.h"\
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TeXSetupWizard.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TPM.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	"..\unzip\globals.h"\
+	"..\unzip\unzip.h"\
+	"..\unzip\unzpriv.h"\
+	"..\unzip\win32\w32cfg.h"\
+	"..\unzip\windll\decs.h"\
+	"..\unzip\windll\structs.h"\
+	"..\unzip\windll\windll.h"\
+	".\environment.h"\
+	".\Log.h"\
+	".\Registry.h"\
+	".\shelllinkdata.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TPM.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TPMspecial.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\environment.h"\
+	".\FileDirectory.h"\
+	".\KeyValFile.h"\
+	".\Log.h"\
+	".\Registry.h"\
+	".\shelllinkdata.h"\
+	".\texinstall.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TPM.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TransBmp.cpp : \
+	".\StdAfx.h"\
+	".\TeXSetup.h"\
+	".\TransBmp.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\TreePackage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\environment.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\shelllinkdata.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TPM.h"\
+	".\TransBmp.h"\
+	".\TreePackage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\UninstallPage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\WelcomePage.cpp : \
+	"..\..\libs\expat\lib\expat.h"\
+	"..\..\libs\geturl\geturl.h"\
+	".\ConfigPage.h"\
+	".\environment.h"\
+	".\ErrorPage.h"\
+	".\FileCopyPage.h"\
+	".\GetTPMPage.h"\
+	".\Log.h"\
+	".\PackagesPage.h"\
+	".\RebootPage.h"\
+	".\ReviewPage.h"\
+	".\RootPage.h"\
+	".\shelllinkdata.h"\
+	".\SourcePage.h"\
+	".\StdAfx.h"\
+	".\texinstall.h"\
+	".\TeXSetup.h"\
+	".\TeXSetupCommandLineInfo.h"\
+	".\TeXSetupWizard.h"\
+	".\TPM.h"\
+	".\TreePackage.h"\
+	".\UninstallPage.h"\
+	".\WelcomePage.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	
+
+.\Win32Util.cpp : \
+	".\StdAfx.h"\
+	".\Win32Util.h"\
+	"c:\program files\microsoft sdk\include\basetsd.h"\
+	"c:\program files\microsoft sdk\include\guiddef.h"\
+	"c:\program files\microsoft sdk\include\propidl.h"\
+	"c:\program files\microsoft sdk\include\reason.h"\
+	"c:\program files\microsoft sdk\include\shldisp.h"\
+	"c:\program files\microsoft sdk\include\shobjidl.h"\
+	"c:\program files\microsoft sdk\include\shtypes.h"\
+	"c:\program files\microsoft sdk\include\stralign.h"\
+	"c:\program files\microsoft sdk\include\tvout.h"\
+	

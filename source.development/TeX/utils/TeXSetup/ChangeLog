@@ -1,0 +1,50 @@
+2002-05-21  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* TeXInstall.cpp (CreateShellObjects): g_bAllUsers is true under
+	W9x.
+
+2001-09-14  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* RootPage.cpp: rearrange the logic behind the setting of paths.
+	
+	* TPMspecial.cpp: use the new GetSafePathName() function when
+	adding directory to the PATH environment variable.
+
+	* TeXInstall.cpp (DoCopyFiles): if WinNT, set TEMP to point to the
+	newly TEXMFTEMP created directory.
+	(GetSafePathName): Returns short path name under Win9X. Use it in
+	various places.
+	
+
+2001-09-01  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* TPM.cpp (GetSpecialFile): try to catenate the remote source
+	url if not an url. Then try to download.
+
+	* TPMspecial.cpp (ConfigureIMagick): no need to copy a specific
+	delegate file anymore.
+	
+
+2001-08-07  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* TPM.cpp (AddRequiredBy): do not add the same key twice. Possible
+	bug there (why should any key be added twice? But this is the case
+	for `adobestd' required by `tex-latex')
+	(DeSelect): Deselection based on count of RequiredBy. If
+	RequiredBy more than once, then do not deselect, else deselect.
+	(Select): Selection based on maintenance mode: do not select
+	required packages if up-to-date in maintenance mode.
+
+2001-08-06  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* TeXInstall.cpp (DoConfiguration): language.dat was build	
+	after mktexlsr has been run, which is wrong.
+	(DoConfiguration): fmtutil can't be run with `--missing' option,
+	even in maintenance mode, because the user might have added some
+	new language for example.
+
+2001-07-20  Fabrice Popineau  <Fabrice.Popineau@supelec.fr>
+
+	* Environnement.cpp: add a fix for non-existent autoexec.bat.
+	
+

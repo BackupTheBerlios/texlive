@@ -1,0 +1,63 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=TeXLive.chm
+Contents file=TeXLive.hhc
+Default topic=texlive.html
+Display compile progress=Yes
+Full-text search=Yes
+Index file=TeXLive.hhk
+Language=0x409 English (United States)
+Title=TeXLive
+
+
+[FILES]
+texlive.html
+install.html
+explore.html
+editors.html
+support.html
+maintenance.html
+documentation.html
+
+[ALIAS]
+HIDD_ROOT_DIALOG = texlive.html
+HIDD_TEXLIVE_DIALOG = texlive.html
+HID_INSTALL_TEXLIVE = install.html#texlive
+HID_INSTALL = install.html
+HID_EXPLORE = explore.html
+HID_INSTALL_EDITORS  = editors.html
+HID_EDITORS_WINSHELL = editors.html#winshell
+HID_EDITORS_WINEDT   = editors.html#winedt
+HID_EDITORS_NTEMACS  = editors.html#ntemacs
+HID_EDITORS_XEMACS   = editors.html#xemacs
+HID_EDITORS_TEXNICCENTER = editors.html#texniccenter
+HID_INSTALL_SUPPORT  = support.html
+HID_SUPPORT_PERL     = support.html#perl
+HID_SUPPORT_IMAGEMAGICK = support.html#imagick
+HID_SUPPORT_NETPBM      = support.html#netpbm
+HID_SUPPORT_GNUTOOLS    = support.html#gnutools
+HID_SUPPORT_FREEGHOSTSCRIPT = support.html#freeghostscript
+HID_DOCUMENTATION   = documentation.html
+HID_DOCUMENTATION_TEXLIVE   = documentation.html#texlive
+HID_DOCUMENTATION_FPTEXWEBSITE = documentation.html#fptexwebsite
+HID_DOCUMENTATION_TUGWEBSITE = documentation.html#tugwebsite
+HID_DOCUMENTATION_RUNTEXDOCTK = documentation.html#runtexdoctk
+HID_MAINTENANCE_TEXLIVEMAINTENANCE = maintenance.html#texlive
+HID_MAINTENANCE_SYSTEMDLLSUPGRADE = maintenance.html#systemdllupgrade
+HID_INSTALL_UNINSTALL = install.html#uninstall
+HID_EXPLORECD_RUNTEXOFFCD = explore.html#runtexoffcdrom
+HID_EXPLORECD_CLEANUPCD   = explore.html#cleanupcd
+HID_EXPLORECD_BROWSECD    = explore.html#browsecd
+HID_INSTALL_INTERNETACCESS = install.html#internetaccess
+HID_EXPLORECD_SELECTEDITOR = explore.html#selecteditor
+HID_SUPPORT_GSVIEW         = support.html#gsview
+
+[MAP]
+#include HTMLDefines.h
+
+[TEXT POPUPS]
+HTMLDefines.h
+
+[INFOTYPES]
+

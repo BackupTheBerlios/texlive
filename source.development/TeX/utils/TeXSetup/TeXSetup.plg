@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TeXSetup - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\popineau\LOCALS~1\Temp\RSP26.tmp" with contents
+[
+../../libs/expat/lib/Debug/expat.lib ../unzip/Debug/unzip.lib ../../libs/geturl_static/Debug/geturl_static.lib advapi32.lib version.lib delayimp.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/TeXSetup.pdb" /debug /machine:I386 /out:"Debug/TeXSetup.exe" /pdbtype:sept /delayload:wininet.dll /delayload:wsock32.dll /delayload:advapi32.dll 
+.\Debug\ConfigPage.obj
+.\Debug\Environment.obj
+.\Debug\ErrorPage.obj
+.\Debug\FileCopyPage.obj
+.\Debug\FileDirectory.obj
+.\Debug\getopt.obj
+.\Debug\getopt1.obj
+.\Debug\GetTPMPage.obj
+.\Debug\KeyValFile.obj
+.\Debug\ListChoiceDlg.obj
+.\Debug\Log.obj
+.\Debug\PackagesPage.obj
+.\Debug\RebootPage.obj
+.\Debug\Registry.obj
+.\Debug\ReviewPage.obj
+.\Debug\RootPage.obj
+.\Debug\ShellLinkData.obj
+.\Debug\SourcePage.obj
+.\Debug\StdAfx.obj
+.\Debug\texinstall.obj
+.\Debug\TeXSetup.obj
+.\Debug\TeXSetupCommandLineInfo.obj
+.\Debug\TeXSetupWizard.obj
+.\Debug\TPM.obj
+.\Debug\TPMspecial.obj
+.\Debug\TransBmp.obj
+.\Debug\TreePackage.obj
+.\Debug\UninstallPage.obj
+.\Debug\WelcomePage.obj
+.\Debug\Win32Util.obj
+.\Debug\TeXSetup.res
+\Source\fptex\win32\unzip\Debug\unzip.lib
+\Source\fptex\libs\expat\lib\Debug\expat.lib
+\Source\fptex\libs\geturl_static\Debug\geturl_static.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\popineau\LOCALS~1\Temp\RSP26.tmp"
+<h3>Output Window</h3>
+Linking...
+   Creating library Debug/TeXSetup.lib and object Debug/TeXSetup.exp
+
+
+
+<h3>Results</h3>
+TeXSetup.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

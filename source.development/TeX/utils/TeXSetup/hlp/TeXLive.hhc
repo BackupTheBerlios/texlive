@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+    <!-- Sitemap 1.0 -->
+  </HEAD><BODY>
+    <OBJECT type="text/site properties">
+      <param name="Window Styles" value="0x800024"/>
+    </OBJECT>
+    <UL>
+      <LI> 
+	<OBJECT type="text/sitemap">
+	  <param name="Name" value="TeXLive Help Topics"/>
+	    <param name="Local" value="HIDD_ROOT_DIALOG"/>
+	</OBJECT>
+	<UL>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Explore the CD-Rom"/>
+		<param name="Local" value="HIDD_EXPLORECDROM"/>
+	    </OBJECT>
+	    <UL>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Browse the CD-Rom"/>
+		    <param name="Local" value="HID_EXPLORECD_BROWSECD"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Select a text editor"/>
+		    <param name="Local" value="HID_EXPLORECD_SELECTEDITOR"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Run TeX off CD-Rom"/>
+		    <param name="Local" value="HID_EXPLORECD_RUNTEXOFFCD"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Clean up after CD-Rom use"/>
+		    <param name="Local" value="HID_EXPLORECD_CLEANUPCD"/>
+		</OBJECT>
+	    </UL>
+	</UL>
+      <LI> <OBJECT type="text/sitemap">
+	  <param name="Name" value="TeXLive Help Topics"/>
+	    <param name="Local" value="HIDD_INSTALL"/>
+	</OBJECT>
+	<UL>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Enable Internet access">
+		<param name="Local" value="HID_INSTALL_INTERNETACCESS">
+	    </OBJECT>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Install TeXLive on hard disk">
+		<param name="Local" value="HID_INSTALL_TEXLIVE">
+	    </OBJECT>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Install editors">
+		<param name="Local" value="HID_INSTALL_EDITORS">
+	    </OBJECT>
+	    <UL>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Gnu Emacs"/>
+		    <param name="Local" value="HID_INSTALL_NTEMACS"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="XEmacs">
+		    <param name="Local" value="HID_INSTALL_XEMACS">
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="WinShell">
+		    <param name="Local" value="HID_INSTALL_WINSHELL">
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="WinEdt">
+		    <param name="Local" value="HID_INSTALL_WINEDT">
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="TeXnicCenter">
+		    <param name="Local" value="HID_INSTALL_TEXNICCENTER">
+		</OBJECT>
+	    </UL>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Install other support packages">
+		<param name="Local" value="HID_INSTALL_SUPPORT">
+	    </OBJECT>
+	    <UL>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Free Ghostscript"/>
+		    <param name="Local" value="HID_SUPPORT_FREEGHOSTSCRIPT"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Gnu tools"/>
+		    <param name="Local" value="HID_SUPPORT_GNUTOOLS"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="NetPBM"/>
+		    <param name="Local" value="HID_SUPPORT_NETPBM"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="ImageMagick"/>
+		    <param name="Local" value="HID_SUPPORT_IMAGEMAGICK"/>
+		</OBJECT>
+	      <LI> <OBJECT type="text/sitemap">
+		  <param name="Name" value="Perl"/>
+		    <param name="Local" value="HID_SUPPORT_PERL"/>
+		</OBJECT>
+	    </UL>
+	  <LI> <OBJECT type="text/sitemap">
+	      <param name="Name" value="Uninstall TeXLive"">
+		<param name="Local" value="HID_INSTALL_UNINSTALL">
+	    </OBJECT>
+	</UL>
+      <LI> <OBJECT type="text/sitemap">
+	  <param name="Name" value="Maintenance"/>
+	    <param name="Local" value="HIDD_MAINTENANCE"/>
+	</OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+	  <param name="Name" value="Documentation"/>
+	    <param name="Local" value="HIDD_DOCUMENTATION"/>
+	</OBJECT>
+    </UL>
+  </UL>
+    </UL>
+  </BODY></HTML>

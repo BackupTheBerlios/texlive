@@ -1,0 +1,433 @@
+$Header: /home/xubuntu/berlios_backup/github/tmp-cvs/texlive/Repository/source.development/TeX/texk/dvipdfmx/ChangeLog,v 1.1 2004/01/08 13:44:10 rahtz Exp $
+
+ChangeLog: Changes for dvipdfmx
+===============================
+
+Last modified: December 30, 2002
+
+
+2002-12-30  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Fixed a bug in writing null array.
+
+	* Fixed a bug in reading CMap and encoding files in MiKTeX.
+
+2002-11-28  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Support color shading feature in ConTeXt.
+
+2002-11-25  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* New feature pdfdecimaldigits (default=3) is implemented.
+
+	* Fixed a missing line in dvipdfmx.c.
+
+	* Fixed a bug in page attribute boxes, e.g., CropBox, TrimBox.
+
+2002-11-11  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* The "pdf: dest" special reads pdf_object not pdf_array.
+
+	* Fixed a bug in finding encoding files with extension.
+
+	* Look up the entries in miktex.ini while finding files.
+
+2002-10-31  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Fixed a bug in finding files with the kpathsea library 3.3.7.
+
+2002-10-28  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* The project name was changed to dvipdfmx from dvipdfm-cjk.
+
+	* Changed the way of finding files (MiKTeX and KPATHSEA)
+	  (contributed by Akira Kakuto).
+
+	* Support embedded MetaPost graphics in ConTeXt using new PDF
+	  special \special{pdf:literal [direct|reverse] ...}.
+
+2002-10-25  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Removed all files related to the original dvipdfm,
+	  and all CMap files from Adobe.
+
+	* Changed the executable file dvipdfm to dvipdfmx,
+	  the configuration file config to dvipdfmx.cfg,
+	  the Type0 map file cid.map to cid-x.map.
+
+2002-10-24  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* It is possible to change the size of each page with the
+	  special command \special{pdf:pagesize ...}. Override the
+	  previous changes if there are two such commands in a page.
+
+2002-10-17  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Fixed a bug in parsing an array in two lines. (mpost.c)
+
+	* Changed not to lookup the header to find fonts. (mpost.c)
+
+2002-10-09  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Duplication is allowed for named_references[]. (pdfspecial.c)
+
+2002-06-05  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Fixed a bug in parse_key_val() found by Yasuhiro Okazaki.
+
+2002-05-31  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Bug fixed for ToUnicode conversion in PDF outlines(bookmarks),
+	  docinfo, and text annotations (contributed by Akira Kakuto).
+
+	* Included the ToUnicode CMap, EUC-UCS2.
+
+2002-05-22  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Support CJK characters in PDF outlines(bookmarks), docinfo, and
+	  text annotations (contributed by Akira Kakuto).
+
+2002-05-15  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* PDF encryption support with the OpenSSL library.
+
+2002-04-30  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* ToUnicode CMap (only Unicode) support for Identity-H(V).
+
+	* Included the ToUnicode CMap, Adobe-Identity-UCS2.
+
+2002-04-22  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Included two CMaps, UniKSCms-UCS2-H(V) which fix a bug in
+	  UniKS-UCS-H(V).
+
+2002-04-17  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Changed xxx_set_debug() to #ifdef DEBUG.
+
+2002-04-16  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Improved reading PNG image files.
+
+	* Rearranged all files to work with GNU autotools.
+
+	* Removed HAVE_TTF_FORMATS and HAVE_OFM_FORMATS.
+
+2002-04-09  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Minor fix on 'source/pkfont.c'.
+
+2002-04-07  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Fixed all warning messages generated with MSVC++.
+
+	* Rewrote the functions 'xxx_locate_font()' again.
+
+2002-04-04  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Changed the order of loading virtual and physical fonts as
+	  suggested by Akira Kakuto <kakuto@fsci.fuk.kindai.ac.jp>.
+	  If map entries are found, virtual fonts will not be used anymore.
+
+2002-04-02  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Implemented no-embedding and stylistic variants for CIDFontType0.
+
+2002-03-31  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Added two CMaps, ETenms-B5-H and ETenms-B5-V.
+
+2002-03-30  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor fix on the patch by Takanori Uchiyama.
+
+2002-03-29  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Applied the patch by Takanori Uchiyama <uchiyama@appi.keio.ac.jp>,
+	  supporting the direction command of ASCII pTeX's extension in
+	  virtual fonts.
+
+	* Two CMaps, Identity-H and Identity-V are hard-coded in cmap.c.
+
+2002-03-20  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Applied the patch by Jungshik Shin, not embedding the unnecessary
+	  character /.notdef in type1 fonts. 
+
+2002-03-20  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Modified cid_basefont.h.
+
+2002-03-05  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Support for UTF8 encoding through Identity CMap.
+
+2002-02-25  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Implemented no-embedding feature for CIDFontType2.
+
+	* Implemented Bold, Italic, BoldItalic attributes for CIDFontType2
+	  and CID predefined fonts.
+
+2002-02-22  Jin-Hwan Cho <chofchof@ktug.or.kr>
+
+	* Implemented subfont approach for CJK and HLaTeX.
+
+2002-01-07  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed bug introduced on 2002-01-05.
+
+2002-01-05  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Workaround for some bad TrueType fonts that does not have US-English
+	  PostScript font name.
+
+2001-12-27  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Changed to parse all charstrings. Check for the SEAC character.
+
+	* Minor changes in CFF related codes.
+
+2001-12-26  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Merged cmap and cmap_parse.
+
+2001-12-25  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Cleaned up TrueType and CFF related codes.
+
+	* Minor bug fixes.
+
+2001-12-23  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed bug that always requires Private DICT(s) which may not exist.
+
+	* Cleaned up TrueType and CFF related things.
+
+2001-12-18  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Biased subroutine number is signed in cs_type2.c.
+
+2001-12-14  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* macglyphs.h regenerated from apple's TTRefMan.
+
+2001-12-13  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor cleanups.
+
+	* Fixed typo (yacture -> yacute, Islash -> lslash) in macglyphs.h.
+
+	* Fixed signedness of TureType cmap subtable format 0 data.
+
+2001-12-11  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor fixes.
+
+	* Fixed bug that interpretion of hmtx table is still wrong.
+
+	* Fixed fixed().
+
+	* More improved FontDescriptor for TrueType/OpenType fonts.
+
+	* Support for PostScript glyph name in TrueType post table.
+	  Full subsettting is also available for non-CJK TrueType fonts.
+	  Cyrillic and other TrueType fonts can be used.
+	  Requires post table with version 2.0.
+
+2001-12-09  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Bug fixes.
+
+2001-12-05  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed bug that last entry of the loca table may not be read.
+
+	* DW is set to that of missing glyph (CIDFontType 2).
+
+	* Bug fixes.
+
+2001-12-04  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixes.
+
+2001-12-03  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor charnges, cleanups.
+
+	* Write CIDSet.
+
+2001-12-02  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Initial CFF CID-Keyed Font support.
+	  Only Type 2 charstring is supported.
+
+2001-11-27  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor fixes, cleanups.
+
+2001-11-26  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed (serious) bug that hmtx table is incorrectly interpreted.
+
+	* Fixed bug that encoding ID of RPC and BIG5 are interchanged.
+
+	* Added missing cast in cidtype2.c.
+
+2001-11-25  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Bug fix.
+
+2001-11-24  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Added missing free() (RELEASE) in cidtype2.c.
+
+	* Minor fixes.
+
+	* Fixed typos.
+
+2001-11-22  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Clean up.
+
+	* Allow `Preview & Print' licensed fonts to be embedded.
+	  TrueType OS/2 table is preserved.
+
+2001-11-20  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor cleanups. Fixed typos.
+
+	* Strip out bad strings form PostScript names;
+	  -WIN-RKSJ-H, -WINP-RKSJ-H, -WING-RKSJ-H, and -90pv-RKSJ-H.
+	  Some font uses PostScript name one of above strings appended,
+	  even if Shift-JIS encoding is not used.
+
+2001-11-18  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Workaround for Omega: Omega uses setxxx (single-byte char) command
+	  while double-byte font is in use. Pass character type to
+	  dev_set_string() to distinguish single-byte and double-byte.
+	  Maybe, it works with CJK-LaTeX by preparing set of CMaps.
+
+	* Write double-byte strings as hex strings.
+	  This makes bit faster and tend to generate smaller PDF in most cases.
+
+	* CMap parser uses wrok_buffer in mfileio.
+
+	* Reserved w_array and w2_array in struct cid_font for future use.
+
+	* Now write /W array for TrueType, proportional latin and kana works
+	  properly. The metric information are taken from font file, not from
+	  TFM, to ensure we always have correct widths. The default width (DW)
+	  is set to 1000.
+
+	* Changed sizeof() appeared in sfnt_put_xxx() to expected values in
+	  sfnt.h. I do not assume LONG to be exactly 32-bit long, ....
+
+2001-11-17  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Added Chinese and Korean related stuff again. Chinese and Korean
+	  languages are supported through Omega, or by achieving Ascii pTeX
+	  compatibility.
+
+	* Closing CMaps is missing. Added cmap_close_all(), which is invoked by
+	  dev_close_all_fonts() in pdfdev.c.
+
+	* Check length of output string for Type 0 font. It must be multiple of
+	  2. Omega uses 8-bit and 16-bit mixed string even for double-byte
+	  fonts. This causes problems.
+
+	* Abort if missing/invalid character is used.
+
+2001-11-15  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Bug fixes.
+
+2001-11-12  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* (nearly) Completely rewritten.
+
+	* Force Identity CMap. (double-byte character codes are mapped to CID)
+
+	* Added CMap parser. (mkcidcct.pl is no longer needed)
+
+	* Sync with jpatch.
+
+2001-10-01  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Should return -1 when encoding_id >= 0 in type0_font().
+
+2001-08-08  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed a bug that raster images show up incorrectly in vertical
+	  writing mode.
+
+2001-08-07  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Removed dev_set_string2(), use dev_set_string() instead.
+
+	* set_dev_vwmode() is renamed to set_dev_wmode().
+	  Added dev_wmode() and mp_mode flag in pdfdev.c.
+
+	* Support for Japanized MetaPost (pdfparse.h, mpost.c).
+	
+2001-07-21  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed a bug that do not reset text state in vertical writing.
+
+2001-07-20  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed wrong positioning for slanted non-CJK font in vertical writing.
+
+2001-07-19  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Support OS/2 table version 0x0002.
+
+2001-07-17  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Support multiple parents for a single CID-keyed font
+	(incomplete).
+
+	  TODO:
+	    check the consistency of charcter collections.
+
+	* Removed entries for unsupported CMaps.
+
+	* Updated cid.map.
+
+2001-07-15  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Better font metric info for CIDFontType2.
+
+	* Added (partial) support for vertical writing.
+	  Added wmode flag to struct a_type0_font and dev_font.
+
+	  TODO:
+	    GSUB support in CIDFontType2.
+	    /W2 and /DW2.
+
+	* Added support for vertical version of CMaps in mkcidcct.pl
+	
+2001-07-07  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Minor fixes.
+
+	* Updated out2uni.c
+	
+2001-06-30  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* --> dvipdfm-0.13.2c
+
+2001-06-29  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Fixed a bug that select incorrect indexToLocaFormat
+	(cidtype2.c).
+
+	* Fixed several bugs in cidtype2.c.
+
+2001-06-27  Shunsaku Hirata <hira4scp@mbox.nc.kyushu-u.ac.jp>
+
+	* Added support for CJK-TrueType font embedding.
+
+	* Cleaned up Type0 and CID font handling code.

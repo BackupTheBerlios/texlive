@@ -1,0 +1,17 @@
+#!/bin/sh
+test -f /bin/sh5 && test -z "$RUNNING_SH5" \
+  && test x"`(uname -s) 2>&1`" = xULTRIX \
+  && { RUNNING_SH5=true; export RUNNING_SH5; exec /bin/sh5 $0 ${1+"$@"}; }
+RUNNING_SH5=
+
+test -f /bin/bsh && test -z "$RUNNING_BSH" \
+  && test x"`(uname -s) 2>&1`" = xAIX \
+  && { RUNNING_BSH=true; export RUNNING_BSH; exec /bin/bsh $0 ${1+"$@"}; }
+RUNNING_BSH=
+
+$1 $2
+$1 $2
+$1 $2
+tex4ht $2
+t4ht $2  $3
+
